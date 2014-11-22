@@ -4,3 +4,9 @@ H:\Practice\JMD\JMD\obj\Debug\JMD.dll
 H:\Practice\JMD\JMD\obj\Debug\JMD.pdb
 H:\Practice\JMD\JMD\obj\Debug\JMD.csprojResolveAssemblyReference.cache
 H:\Practice\JMD\JMD\bin\AjaxMin.dll
+H:\IT485\LinkedU\JMD\bin\JMD.dll
+H:\IT485\LinkedU\JMD\bin\JMD.pdb
+H:\IT485\LinkedU\JMD\bin\AjaxMin.dll
+H:\IT485\LinkedU\JMD\obj\Debug\JMD.csprojResolveAssemblyReference.cache
+H:\IT485\LinkedU\JMD\obj\Debug\JMD.dll
+H:\IT485\LinkedU\JMD\obj\Debug\JMD.pdb
