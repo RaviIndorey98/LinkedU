@@ -1,0 +1,6 @@
+H:\Practice\JMD\JMD\bin\JMD.dll
+H:\Practice\JMD\JMD\bin\JMD.pdb
+H:\Practice\JMD\JMD\obj\Debug\JMD.dll
+H:\Practice\JMD\JMD\obj\Debug\JMD.pdb
+H:\Practice\JMD\JMD\obj\Debug\JMD.csprojResolveAssemblyReference.cache
+H:\Practice\JMD\JMD\bin\AjaxMin.dll

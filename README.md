@@ -1,2 +1,2 @@
-LinkedU
+LinkedU On GitHub
 =======
