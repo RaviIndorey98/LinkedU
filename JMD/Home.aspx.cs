@@ -12,7 +12,7 @@ namespace JMD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack)
+            if (!Page.IsPostBack)
             {
                 Page.Validate();
                 if (Page.IsValid)
@@ -23,10 +23,8 @@ namespace JMD
                     string email = TextBox2.Text;
                     string profiletype = radiolist1.SelectedValue.ToString();
                     
+                    SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
                     
-
-
-                 SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
                     try
                     {
                         dbConnection.Open();
@@ -45,17 +43,9 @@ namespace JMD
                             Response.Write("<p>Error code " + exception.Number
                                 + ": " + exception.Message + "</p>");
                     }
-                    finally
-                    {
-
-                        Console.Write("Successfully selected the database");
-                    }
+                    
                     try
                     {
-                        //string SQLString = "SELECT * FROM StudentProfile";
-                        //SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
-                        //SqlDataReader idRecords = checkIDTable.ExecuteReader();
-                        //idRecords.Close();
                         string SQLString1 = "SELECT * FROM SignUp";
                         SqlCommand checkIDTable1 = new SqlCommand(SQLString1, dbConnection);
                         SqlDataReader idRecords1 = checkIDTable1.ExecuteReader();
