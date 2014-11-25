@@ -10,23 +10,16 @@ namespace JMD
 {
     public partial class Home : System.Web.UI.Page
     {
+        SqlConnection dbConnection;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack)
+            if (!Page.IsPostBack)
             {
                 Page.Validate();
                 if (Page.IsValid)
                 {
-                    //Label1.Visible = false;
-                    string username = TextBox1.Text;
-                    string pass = TextBox3.Text;
-                    string email = TextBox2.Text;
-                    string profiletype = radiolist1.SelectedValue.ToString();
-                    
-                    
-
-
-                 SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+                    dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
                     try
                     {
                         dbConnection.Open();
@@ -45,17 +38,8 @@ namespace JMD
                             Response.Write("<p>Error code " + exception.Number
                                 + ": " + exception.Message + "</p>");
                     }
-                    finally
-                    {
-
-                        Console.Write("Successfully selected the database");
-                    }
                     try
                     {
-                        //string SQLString = "SELECT * FROM StudentProfile";
-                        //SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
-                        //SqlDataReader idRecords = checkIDTable.ExecuteReader();
-                        //idRecords.Close();
                         string SQLString1 = "SELECT * FROM SignUp";
                         SqlCommand checkIDTable1 = new SqlCommand(SQLString1, dbConnection);
                         SqlDataReader idRecords1 = checkIDTable1.ExecuteReader();
@@ -65,37 +49,13 @@ namespace JMD
                     {
                         if (exception.Number == 208)
                         {
-                            SqlCommand sqlCommand2 = new SqlCommand("CREATE TABLE SignUp(UserName VARCHAR(50) PRIMARY KEY,Email VARCHAR(50),Password VARCHAR(50),UserType VARCHAR(50))", dbConnection);
-                           // SqlCommand sqlCommand = new SqlCommand("CREATE TABLE StudentProfile(UserName VARCHAR(50))", dbConnection);
-                            sqlCommand2.ExecuteNonQuery();
-                            //sqlCommand.ExecuteNonQuery();
-                            
+                            SqlCommand sqlCommand = new SqlCommand("CREATE TABLE SignUp(UserName VARCHAR(50) PRIMARY KEY,Email VARCHAR(50),Password VARCHAR(50),UserType VARCHAR(50))", dbConnection);
+                            sqlCommand.ExecuteNonQuery();
                         }
                         else
                             Label1.Text += "<p>Error code " + exception.Number
                                 + ": " + exception.Message + "</p>";
                     }
-                    finally
-                    {
-
-                        string studentInfo =
-                          "INSERT INTO SignUp VALUES('"
-                           + username + "', '"
-                           + email + "', '"
-                           + pass + "', '"
-                           + profiletype + "')";
-                        //string auInfo = " INSERT INTO StudentProfile VALUES('" + username + "')";
-
-                        SqlCommand sqlCommand = new SqlCommand(studentInfo, dbConnection);
-                        //SqlCommand sqlCommand2 = new SqlCommand(auInfo, dbConnection);
-                        //sqlCommand.ExecuteNonQuery();
-                        sqlCommand.ExecuteNonQuery();
-                    }
-                    //Label1.Text += "<p>Thanks " + first + "! Your new student ID is <strong>" + userid + "</strong>.</p>";
-                    //Label1.Text += "<p><a href='ReturningStudent.aspx?" + studentID + "'>Register for Classes</a></p>";
-                    dbConnection.Close();
-                    
-
                 }
             }
 
@@ -103,7 +63,22 @@ namespace JMD
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (radiolist1.SelectedValue=="student")
+            string username = TextBox1.Text;
+            string pass = TextBox3.Text;
+            string email = TextBox2.Text;
+            string profiletype = radiolist1.SelectedValue.ToString();
+
+            string studentInfo =
+                          "INSERT INTO SignUp VALUES('"
+                           + username + "', '"
+                           + email + "', '"
+                           + pass + "', '"
+                           + profiletype + "')";
+
+            SqlCommand sqlCommand = new SqlCommand(studentInfo, dbConnection);
+            sqlCommand.ExecuteNonQuery();
+
+            if (radiolist1.SelectedValue == "student")
             {
                 Session["useridsess"] = TextBox1.Text;
                 Response.Redirect("createstudentprofile1.aspx");
@@ -112,11 +87,13 @@ namespace JMD
             {
                 Response.Redirect("Recruiter Profile.aspx");
             }
-            
-        }
+            dbConnection.Close();
 
-      
-
-       
+            HttpCookie userDetails = new HttpCookie("Signup");
+            userDetails["userName"] = username;
+            userDetails["emailAdd"] = email;
+            userDetails.Expires = DateTime.Now.AddDays(7);
+            Response.Cookies.Add(userDetails);
         }
     }
+}

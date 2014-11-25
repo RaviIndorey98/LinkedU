@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMD", "JMD\JMD.csproj", "{FCE957E9-0D88-4584-A543-DEAB55BF2CAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedU", "JMD\LinkedU.csproj", "{FCE957E9-0D88-4584-A543-DEAB55BF2CAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
