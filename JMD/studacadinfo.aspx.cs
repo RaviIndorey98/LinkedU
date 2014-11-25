@@ -14,29 +14,52 @@ namespace JMD
 {
     public partial class studacadinfo : System.Web.UI.Page
     {
-        SqlConnection dbConnection;
-        string userName;
-        string emailAdd;
+        SqlConnection dbConnection; 
+       
            
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["Signup"] != null)
+            if (Session["useridsess"] != null)
             {
-                HttpCookie retCookie = new HttpCookie("Signup");
-                userName = retCookie.Values["userName"];
-                emailAdd = retCookie.Values["emailAdd"];
+                //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "useridsess";
+                empid.Type = TypeCode.Int32;
+                empid.SessionField = "useridsess";
             }
             else
             {
                 Response.Redirect("Home.aspx");
             }
+           
+            //SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+            //dbConnection.Open();
+            //dbConnection.ChangeDatabase("amalviy_LinkedU");
+            
+            //string SQLString = "SELECT UserName FROM StudentProfile";
+            //SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
 
+            ////SqlDataReader idRecords = checkIDTable.ExecuteReader();
+            //SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds, "StudentProfile");
+            //Label2.Text = ds.Tables["StudentProfile"].Rows[0]["UserName"].ToString();
+            Label2.Text = Session["useridsess"].ToString();
             if (IsPostBack == false)
             {
-                
+                //get reference of your webservice
                 ServiceReference1.countrySoapClient ct = new ServiceReference1.countrySoapClient();
+                ServiceReference2.USZipSoapClient cd = new ServiceReference2.USZipSoapClient();
+                //  myservice.country ct = new myservice.country();
+
+                // str is an XML String which will hold all the countries in xml format
                 string str = ct.GetCountries();
+                //string ab = cd.GetInfoByCity();
+
+                //string ab2 = cd.GetInfoByZIP();
+                // add first item in dropdownlist
                 DropDownList4.Items.Add("-Select-");
+               
 
                 //Create an XML Document and load your XML
                 XmlDocument doc = new XmlDocument();
@@ -52,6 +75,8 @@ namespace JMD
                 foreach (XmlNode node in nodes)
                 {
                     DropDownList4.Items.Add(node["Name"].InnerText);
+                   
+
                 }
 
                 dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
@@ -60,28 +85,36 @@ namespace JMD
                 {
                     dbConnection.Open();
                     dbConnection.ChangeDatabase("amalviy_LinkedU"); 
+
                 }
                 catch (SqlException exception)
                 {
                     Response.Write("Error code " + exception.Number + ": " + exception.Message);
                 }
+                 
+
             }
 
         }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
+           
+
             SqlConnection con = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
             con.Open();
-            con.ChangeDatabase("amalviy_LinkedU");
+            con.ChangeDatabase("amalviy_ConservationSchool");
             
-            // String query8 = "INSERT INTO  StudentWordFiles VALUES('0' ,'0' ,'0' ,'0' ,'0' ,'0' ,'0' ,'0' ,'0' ,'" + "PERSON" + "')";
-            String query8 = "INSERT INTO  StudentWordFiles (UserName) VALUES('" + userName + "')";
+            // String query8 = "INSERT INTO  wordFiles1 VALUES('0' ,'0' ,'0' ,'0' ,'0' ,'0' ,'0' ,'0' ,'0' ,'" + "PERSON" + "')";
+            String query8 = "INSERT INTO  wordFiles1 (UserName) VALUES('" + Label2.Text + "')";
             SqlCommand cmd = new SqlCommand(query8, con);
             cmd.ExecuteNonQuery();
 
+
+
+
+
             con.Close();
-            SOPLabel.Visible = true;
+            Label256.Visible = true;
             
             string filePath = FileUpload1.PostedFile.FileName;          // getting the file path of uploaded file
             string filename1 = Path.GetFileName(filePath);               // getting the file name of uploaded file
@@ -90,7 +123,7 @@ namespace JMD
 
             if (!FileUpload1.HasFile)
             {
-                SOPLabel.Text = "Please Select File";                          //if file uploader has no file selected
+                Label256.Text = "Please Select File";                          //if file uploader has no file selected
             }
             else
                 if (FileUpload1.HasFile)
@@ -120,6 +153,11 @@ namespace JMD
 
 
                         }
+
+
+
+
+
                         if (type != String.Empty)
                         {
 
@@ -127,36 +165,36 @@ namespace JMD
 
                             //SqlConnection con = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
                             con.Open();
-                            con.ChangeDatabase("amalviy_LinkedU");
+                            con.ChangeDatabase("amalviy_ConservationSchool");
 
 
                             Stream fs = FileUpload1.PostedFile.InputStream;
                             BinaryReader br = new BinaryReader(fs);                                 //reads the   binary files
                             Byte[] bytes = br.ReadBytes((Int32)fs.Length);                           //counting the file length into bytes
-                            //String query = "insert into StudentWordFiles (Name,type,data)" + " values (@Name, @type, @Data);    //insert query
+                            //String query = "insert into wordFiles1 (Name,type,data)" + " values (@Name, @type, @Data);    //insert query
 
-                            String query = "Update StudentWordFiles set Name1=@Name1, type1=@type1, Data1=@Data1 WHERE UserName =" + "'" + userName + "'";    //insert query
+                            String query = "Update wordFiles1 set Name=@Name, type=@type, Data=@Data WHERE UserName =" + "'" + Label2.Text + "'";    //insert query
 
 
                             SqlCommand com = new SqlCommand(query, con);
-                            com.Parameters.Add("@Name1", SqlDbType.VarChar).Value = filename1;
-                            com.Parameters.Add("@type1", SqlDbType.VarChar).Value = type;
-                            com.Parameters.Add("@Data1", SqlDbType.Binary).Value = bytes;
+                            com.Parameters.Add("@Name", SqlDbType.VarChar).Value = filename1;
+                            com.Parameters.Add("@type", SqlDbType.VarChar).Value = type;
+                            com.Parameters.Add("@Data", SqlDbType.Binary).Value = bytes;
                             com.ExecuteNonQuery();
-                            SOPLabel.ForeColor = System.Drawing.Color.Green;
-                            SOPLabel.Text = " Your File Uploaded Successfully";
+                            Label256.ForeColor = System.Drawing.Color.Green;
+                            Label256.Text = " Your File Uploaded Successfully";
 
 
                         }
                         else
                         {
-                            SOPLabel.ForeColor = System.Drawing.Color.Red;
-                            SOPLabel.Text = "Select Only listed format Files  ";                              // if file is other than speified extension 
+                            Label256.ForeColor = System.Drawing.Color.Red;
+                            Label256.Text = "Select Only listed format Files  ";                              // if file is other than speified extension 
                         }
                     }
                     catch (Exception ex)
                     {
-                        SOPLabel.Text = "Error1: " + ex.Message.ToString();
+                        Label256.Text = "Error1: " + ex.Message.ToString();
                     }
                 }
 
@@ -169,16 +207,22 @@ namespace JMD
         {
             SqlConnection con = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
             con.Open();
-            con.ChangeDatabase("amalviy_LinkedU");
+            con.ChangeDatabase("amalviy_ConservationSchool");
 
 
-            String query = "Select * from StudentWordFiles where UserName=" + "'" + userName + "'";
+            String query = "Select * from wordFiles1 where UserName=" + "'" + Label2.Text + "'";
+            //String query = "Update wordFiles1 set Name2=@Name2, type2=@type2, Data2=@Data2 WHERE UserName =" + "'" + "PERSON" + "'"; 
             SqlDataAdapter da = new SqlDataAdapter(query, con);
             DataSet ds = new DataSet();
             da.Fill(ds);
             GridView1.DataSource = ds;
             GridView1.DataBind();
             con.Close();
+
+
+
+
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -187,12 +231,12 @@ namespace JMD
 
             SqlConnection con = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
             con.Open();
-            con.ChangeDatabase("amalviy_LinkedU");
+            con.ChangeDatabase("amalviy_ConservationSchool");
 
 
-            SqlCommand com = new SqlCommand("select Name1,Name2,Name3 from  StudentWordFiles where UserName=@UserName", con);
-            //SqlCommand com = new SqlCommand("select Name,type,Data from  StudentWordFiles where UserName=@UserName", con);
-            //  SqlCommand com = new SqlCommand("select * from  StudentWordFiles where UserName=" + "'" + "PERSON" + "'", con);
+            SqlCommand com = new SqlCommand("select Name,Name2,Name3 from  wordFiles1 where UserName=@UserName", con);
+            //SqlCommand com = new SqlCommand("select Name,type,Data from  WordFiles1 where UserName=@UserName", con);
+            //  SqlCommand com = new SqlCommand("select * from  WordFiles1 where UserName=" + "'" + "PERSON" + "'", con);
 
 
 
@@ -205,17 +249,31 @@ namespace JMD
                 Response.Clear();
                 Response.Buffer = true;
                 Response.ContentType = dr["type"].ToString();
-                Response.AddHeader("content-disposition", "attachment;filename=" + dr["Name1"].ToString());     // to open file prompt Box open or Save file         
+                Response.AddHeader("content-disposition", "attachment;filename=" + dr["Name"].ToString());     // to open file prompt Box open or Save file         
                 Response.Charset = "";
                 Response.Cache.SetCacheability(HttpCacheability.NoCache);
                 Response.BinaryWrite((byte[])dr["data"]);
                 Response.End();
             }
+
+
+
+
+
+
+
+
+
+
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            TranscriptLabel.Visible = true;
+
+
+
+
+            Label256.Visible = true;
             string filePath = FileUpload2.PostedFile.FileName;          // getting the file path of uploaded file
             string filename1 = Path.GetFileName(filePath);               // getting the file name of uploaded file
             string ext = Path.GetExtension(filename1);                      // getting the file extension of uploaded file
@@ -223,7 +281,7 @@ namespace JMD
 
             if (!FileUpload2.HasFile)
             {
-                TranscriptLabel.Text = "Please Select File";                          //if file uploader has no file selected
+                Label256.Text = "Please Select File";                          //if file uploader has no file selected
             }
             else
                 if (FileUpload2.HasFile)
@@ -265,7 +323,7 @@ namespace JMD
 
                             SqlConnection con = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
                             con.Open();
-                            con.ChangeDatabase("amalviy_LinkedU");
+                            con.ChangeDatabase("amalviy_ConservationSchool");
 
 
 
@@ -274,29 +332,38 @@ namespace JMD
                             Stream fs = FileUpload2.PostedFile.InputStream;
                             BinaryReader br = new BinaryReader(fs);                                 //reads the   binary files
                             Byte[] bytes = br.ReadBytes((Int32)fs.Length);                           //counting the file length into bytes
-                            //String query = "insert into StudentWordFiles (Name2,type2,data2)" + " values (@Name2, @type2, @Data2) Where UserName =" + "'" + "PERSON" + "'";    //insert query
-                            String query = "Update StudentWordFiles set Name2=@Name2, type2=@type2, Data2=@Data2 WHERE UserName =" + "'" + userName + "'";
+                            //String query = "insert into wordFiles1 (Name2,type2,data2)" + " values (@Name2, @type2, @Data2) Where UserName =" + "'" + "PERSON" + "'";    //insert query
+                            String query = "Update wordFiles1 set Name2=@Name2, type2=@type2, Data2=@Data2 WHERE UserName =" + "'" + Label2.Text + "'";
                             SqlCommand com = new SqlCommand(query, con);
                             com.Parameters.Add("@Name2", SqlDbType.VarChar).Value = filename1;
                             com.Parameters.Add("@type2", SqlDbType.VarChar).Value = type;
                             com.Parameters.Add("@Data2", SqlDbType.Binary).Value = bytes;
                             com.ExecuteNonQuery();
-                            TranscriptLabel.ForeColor = System.Drawing.Color.Green;
-                            TranscriptLabel.Text = " Your File Uploaded Successfully";
+                            Label256.ForeColor = System.Drawing.Color.Green;
+                            Label256.Text = " Your File Uploaded Successfully";
 
 
                         }
                         else
                         {
-                            TranscriptLabel.ForeColor = System.Drawing.Color.Red;
-                            TranscriptLabel.Text = "Select Only listed format Files  ";                              // if file is other than speified extension 
+                            Label256.ForeColor = System.Drawing.Color.Red;
+                            Label256.Text = "Select Only listed format Files  ";                              // if file is other than speified extension 
                         }
                     }
                     catch (Exception ex)
                     {
-                        TranscriptLabel.Text = "Error: " + ex.Message.ToString();
+                        Label256.Text = "Error: " + ex.Message.ToString();
                     }
                 }
+
+
+
+
+
+
+
+
+
 
         }
 
@@ -310,10 +377,10 @@ namespace JMD
             SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
             DataSet ds = new DataSet();
             da.Fill(ds, "SignUp");
-            userName = Session["useridsess"].ToString();
+            Label2.Text = Session["useridsess"].ToString();
 
 
-            ResumeLabel.Visible = true;
+            Label256.Visible = true;
             string filePath = FileUpload3.PostedFile.FileName;          // getting the file path of uploaded file
             string filename1 = Path.GetFileName(filePath);               // getting the file name of uploaded file
             string ext = Path.GetExtension(filename1);                      // getting the file extension of uploaded file
@@ -321,7 +388,7 @@ namespace JMD
 
             if (!FileUpload3.HasFile)
             {
-                ResumeLabel.Text = "Please Select File";                          //if file uploader has no file selected
+                Label256.Text = "Please Select File";                          //if file uploader has no file selected
             }
             else
                 if (FileUpload3.HasFile)
@@ -352,32 +419,47 @@ namespace JMD
 
                         }
 
+
+
+
+
                         if (type != String.Empty)
                         {
+
+
+
                             SqlConnection con = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
                             con.Open();
-                            con.ChangeDatabase("amalviy_LinkedU");
+                            con.ChangeDatabase("amalviy_ConservationSchool");
+
+
+
+
                             //connection();
                             Stream fs = FileUpload3.PostedFile.InputStream;
                             BinaryReader br = new BinaryReader(fs);                                 //reads the   binary files
                             Byte[] bytes = br.ReadBytes((Int32)fs.Length);                           //counting the file length into bytes
                             //String query = "insert into wordFiles (Name3,type3,data3)" + " values (@Name3, @type3, @Data3) where UserName =" + "'" + "PERSON" + "'";   //insert query
-                            String query = "Update StudentWordFiles set Name3=@Name3, type3=@type3, Data3=@Data3 WHERE UserName =" + "'" + userName + "'";
+                            String query = "Update wordFiles1 set Name3=@Name3, type3=@type3, Data3=@Data3 WHERE UserName =" + "'" + Label2.Text + "'";
                             SqlCommand com = new SqlCommand(query, con);
                             com.Parameters.Add("@Name3", SqlDbType.VarChar).Value = filename1;
                             com.Parameters.Add("@type3", SqlDbType.VarChar).Value = type;
                             com.Parameters.Add("@Data3", SqlDbType.Binary).Value = bytes;
                             com.ExecuteNonQuery();
+                            Label256.ForeColor = System.Drawing.Color.Green;
+                            Label256.Text = " Your File Uploaded Successfully";
+
+
                         }
                         else
                         {
-                            ResumeLabel.ForeColor = System.Drawing.Color.Red;
-                            ResumeLabel.Text = "Select Only listed format Files  ";                              // if file is other than speified extension 
+                            Label256.ForeColor = System.Drawing.Color.Red;
+                            Label256.Text = "Select Only listed format Files  ";                              // if file is other than speified extension 
                         }
                     }
                     catch (Exception ex)
                     {
-                        ResumeLabel.Text = "Error: " + ex.Message.ToString();
+                        Label256.Text = "Error: " + ex.Message.ToString();
                     }
                 }
         }
@@ -470,7 +552,7 @@ namespace JMD
             string phoneNum = TextBox9.Text;
             string cgpa = TextBox10.Text;
             string cgpaRange = TextBox11.Text;
-            string userid = userName;
+            string userid = Label2.Text;
             string act = TextBox12.Text;
             string sat = TextBox13.Text;
             string toefl = TextBox14.Text;
@@ -531,6 +613,15 @@ namespace JMD
                     + sat + "','"
                     + toefl + "','"
                     + ielts + "','"
+                    //+ " " + "','"
+                    //+ " " + "','"
+                    //+ " " + "','"
+                    //+ " " + "','"
+                    //+ " " + "','"
+                    //+ " " + "','"
+                    //+ " " + "','"
+                    //+ " " + "','"
+                    //+ " " + "','"
                     + userid + "','"
                     + ach_sports + "','"
                     + ach_social + "','"
@@ -543,8 +634,14 @@ namespace JMD
                 
                 SqlCommand sqlCommand1 = new SqlCommand(studentInfo, dbConnection);
                 sqlCommand1.ExecuteNonQuery();
-                dbConnection.Close();
-                Response.Redirect("WebForm1.aspx");
-        }     
+
+                Response.Redirect("WebForm1.aspx");     
+            
+            
+        }
+
+        
+
+       
     }
 }

@@ -69,7 +69,7 @@
     <Content Include="bin\AjaxMin.dll" />
     <Content Include="bin\JMD.dll" />
     <Content Include="bin\JMD.pdb" />
-    <Content Include="createstudentprofile.aspx" />
+    <Content Include="createstudentprofile1.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Icon1.png" />
     <Content Include="index.html" />
@@ -84,6 +84,13 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <Content Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
+    <Content Include="Service References\ServiceReference2\uszip.disco" />
+    <Content Include="Service References\ServiceReference2\configuration91.svcinfo" />
+    <Content Include="Service References\ServiceReference2\configuration.svcinfo" />
+    <Content Include="Service References\ServiceReference2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <Content Include="studacadinfo.aspx" />
     <Content Include="style1.css" />
     <Content Include="style.css" />
@@ -100,12 +107,12 @@
       <DependentUpon>AjaxCascadingDropDown.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="createstudentprofile.aspx.cs">
-      <DependentUpon>createstudentprofile.aspx</DependentUpon>
+    <Compile Include="createstudentprofile1.aspx.cs">
+      <DependentUpon>createstudentprofile1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="createstudentprofile.aspx.designer.cs">
-      <DependentUpon>createstudentprofile.aspx</DependentUpon>
+    <Compile Include="createstudentprofile1.aspx.designer.cs">
+      <DependentUpon>createstudentprofile1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -130,6 +137,11 @@
       <DependentUpon>RecruiterPosting.aspx</DependentUpon>
     </Compile>
     <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReference2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -194,6 +206,7 @@
   <ItemGroup>
     <Content Include="Site1.Master" />
     <Content Include="Service References\ServiceReference1\country.wsdl" />
+    <Content Include="Service References\ServiceReference2\uszip.wsdl" />
     <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -207,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+    <WCFMetadataStorage Include="Service References\ServiceReference2\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

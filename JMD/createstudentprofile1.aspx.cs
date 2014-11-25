@@ -13,55 +13,70 @@ namespace JMD
 {
     public partial class createstudentprofile1 : System.Web.UI.Page
     {
-        SqlConnection dbConnection;
+         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.Cookies["userDetails"] != null)
+            if (Session["useridsess"] != null)
             {
-                System.Collections.Specialized.NameValueCollection UserInfoCookieCollection;
-                UserInfoCookieCollection = Request.Cookies["userDetails"].Values;
-                userNameLabel.Text = Server.HtmlEncode(UserInfoCookieCollection["userName"]);
-                emailAddLabel.Text = Server.HtmlEncode(UserInfoCookieCollection["emailAdd"]);
-            }
-            //  if (Session["useridsess"] != null)
-            //  {
-            //     //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
-            //      SessionParameter empid = new SessionParameter();
-            //      empid.Name = "useridsess";
-            //      empid.Type = TypeCode.Int32;
-            //      empid.SessionField = "useridsess";
-            //}
-            else
-            {
+               //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
+                SessionParameter empid = new SessionParameter();
+                empid.Name = "useridsess";
+                empid.Type = TypeCode.Int32;
+                empid.SessionField = "useridsess";
+          }
+                else 
+                {
                 Response.Redirect("Home.aspx");
-            }
-
-
-            ServiceReference1.countrySoapClient ct = new ServiceReference1.countrySoapClient();
-            string str = ct.GetCountries();
-            DropDownList5.Items.Add("-Select-");
-            DropDownList2.Items.Add("-Select-");
-
-
-            //Create an XML Document and load your XML
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(str);
-
-
-            //Get your nodes, here our node in Table because webservice will give us following format
-            // http://www.webservicex.net/country.asmx/GetCountries
-
-            XmlNodeList nodes = doc.DocumentElement.SelectNodes("//Table");
-
-            //Iterates for xml nodes and add them in dropdownlist
-            foreach (XmlNode node in nodes)
+                }
+            if (IsPostBack == false)
             {
-                DropDownList5.Items.Add(node["Name"].InnerText);
-                DropDownList2.Items.Add(node["Name"].InnerText);
+                //get reference of your webservice
+                ServiceReference1.countrySoapClient ct = new ServiceReference1.countrySoapClient();
+                ServiceReference2.USZipSoapClient cd = new ServiceReference2.USZipSoapClient();
+                //  myservice.country ct = new myservice.country();
+
+                // str is an XML String which will hold all the countries in xml format
+                string str = ct.GetCountries();
+                //string ab = cd.GetInfoByCity();
+
+                //string ab2 = cd.GetInfoByZIP();
+                // add first item in dropdownlist
+                DropDownList5.Items.Add("-Select-");
+                DropDownList2.Items.Add("-Select-");
+                //DropDownList3.Items.Add("-Select-");
+                //DropDownList4.Items.Add("-Select-");
+                //drpCNT.Items.Add("-Select-");
+
+                //Create an XML Document and load your XML
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(str);
+
+
+                //Get your nodes, here our node in Table because webservice will give us following format
+                // http://www.webservicex.net/country.asmx/GetCountries
+
+                XmlNodeList nodes = doc.DocumentElement.SelectNodes("//Table");
+
+                //Iterates for xml nodes and add them in dropdownlist
+                foreach (XmlNode node in nodes)
+                {
+                    DropDownList5.Items.Add(node["Name"].InnerText);
+                    DropDownList2.Items.Add(node["Name"].InnerText);
+
+                }
 
             }
+            
+                   
+           
         }
+        
+        
+                
+            
 
+   
+          
         protected void TextBox10_TextChanged1(object sender, EventArgs e)
         {
             String zip = (@"^([0-9]{5})$|([0-9]{5})(\-[0-9]{4})$");
@@ -83,17 +98,43 @@ namespace JMD
 
         protected void TextBox5_TextChanged1(object sender, EventArgs e)
         {
-            String ssn = (@"^(?!\b(\d)\1+\b)(?!123456789|219099999|078051120)(?!666|000|9\d{2})\d{3}(?!00)\d{2}(?!0{4})\d{4}$");
+            String ssn =
+
+(@"^(?!\b(\d)\1+\b)(?!123456789|219099999|078051120)(?!666|000|9\d{2})\d{3}(?!00)\d{2}(?!
+
+0{4})\d{4}$");
 
             if (Regex.IsMatch(TextBox5.Text, ssn))
             {
+
                 Label22.Text = "valid SSN";
+
             }
 
             else
             {
+
                 Label22.Text = "invalid SSN";
+
             }
+        }
+
+        protected void TextBox3_TextChanged1(object sender, EventArgs e)
+        {
+            SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+
+
+            dbConnection.Open();
+            dbConnection.ChangeDatabase("amalviy_LinkedU");
+            string SQLString = "SELECT Email FROM SignUp";
+            SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
+
+            //SqlDataReader idRecords = checkIDTable.ExecuteReader();
+            SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "SignUp");
+            TextBox3.Text = ds.Tables["SignUp"].Rows[0]["Email"].ToString();
+           
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -106,8 +147,8 @@ namespace JMD
             string countryofci = DropDownList5.SelectedValue;
             string ssn = TextBox5.Text;
             string birthday = txtStartDate.Text;
-            Convert.ToDateTime(birthday);
-            string hisp = CheckBox1.Checked ? "Yes" : "No";
+           Convert.ToDateTime(birthday);
+           string hisp = CheckBox1.Text.ToString();
             string race = RadioButtonList1.Text.ToString();
             string address1 = TextBox6.Text;
             string address2 = TextBox7.Text;
@@ -118,11 +159,24 @@ namespace JMD
             string country = DropDownList2.SelectedItem.ToString();
 
 
-            dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+            SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+
+
             dbConnection.Open();
             dbConnection.ChangeDatabase("amalviy_LinkedU");
+          
+            //string SQLString = "SELECT UserName FROM SignUp";
+            //SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
 
-            string usern = userNameLabel.Text;
+            ////SqlDataReader idRecords = checkIDTable.ExecuteReader();
+            //SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds,"SignUp");
+
+            string usern = Session["useridsess"].ToString();
+
+
+            //Console.Write("Successfully selected the database");
 
             try
             {
@@ -169,10 +223,18 @@ namespace JMD
                    + fpcode + "', '"
                    + country + "')";
 
-                SqlCommand sqlCommand2 = new SqlCommand(studentInfo, dbConnection);
 
+
+
+                //string auInfo = " INSERT INTO StudentProfile VALUES('" + username + "')";
+
+                SqlCommand sqlCommand2 = new SqlCommand(studentInfo, dbConnection);
+                //SqlCommand sqlCommand2 = new SqlCommand(auInfo, dbConnection);
+                //sqlCommand.ExecuteNonQuery();
                 sqlCommand2.ExecuteNonQuery();
             }
+            //Label1.Text += "<p>Thanks " + first + "! Your new student ID is <strong>" + userid + "</strong>.</p>";
+            //Label1.Text += "<p><a href='ReturningStudent.aspx?" + studentID + "'>Register for Classes</a></p>";
             dbConnection.Close();
 
             Response.Redirect("studacadinfo.aspx");

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="createstudentprofile.aspx.cs" Inherits="JMD.createstudentprofile1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="createstudentprofile1.aspx.cs" Inherits="JMD.createstudentprofile1" %>
 
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
@@ -24,13 +24,6 @@
         }
         .auto-style3 {
             width: 211px;
-        }
-        .auto-style4 {
-            width: 208px;
-            height: 22px;
-        }
-        .auto-style5 {
-            height: 22px;
         }
     </style>
 </head>
@@ -74,20 +67,6 @@
                                     <table class="auto-style1" draggable="false">
                                         <tr>
                                             <td class="auto-style3">
-                                                User name</td>
-                                            <td>
-                                                <asp:Label ID="userNameLabel" runat="server"></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="auto-style3">
-                                                Email address:</td>
-                                            <td>
-                                                <asp:Label ID="emailAddLabel" runat="server"></asp:Label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="auto-style3">
                                                 <asp:Label ID="Label1" runat="server" Text="First Name"></asp:Label></td>
                                             <td>
                                                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -107,6 +86,7 @@
                                                 <asp:Label ID="Label3" runat="server" Text="Suffix"></asp:Label></td>
                                             <td>
                                                 <asp:DropDownList ID="DropDownList1" runat="server">
+                                                    <asp:ListItem></asp:ListItem>
                                                     <asp:ListItem Value="Jr">Jr.</asp:ListItem>
                                                     <asp:ListItem Value="Sr">Sr.</asp:ListItem>
                                                     <asp:ListItem Value="I">I</asp:ListItem>
@@ -126,6 +106,14 @@
                                                     <asp:ListItem Value="nopes">Don&#39;t want to disclose</asp:ListItem>
                                                 </asp:DropDownList>
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style3">
+                                                <asp:Label ID="Label4" runat="server" Text="EmailID"></asp:Label></td>
+                                            <td>
+                                                <asp:TextBox ID="TextBox3" runat="server" OnTextChanged="TextBox3_TextChanged1"></asp:TextBox>
+                                                <asp:Label ID="Label20" runat="server"></asp:Label></td>
+
                                         </tr>
                                         <tr>
                                             <td class="auto-style3">
@@ -185,28 +173,28 @@
                                     <table class="auto-style1">
                                         <tr>
                                             <td class="auto-style2">
-                                                Address Line 1</td>
+                                                <asp:Label ID="Label12" runat="server" Text="Address Line1"></asp:Label></td>
                                             <td>
-                                                <asp:TextBox ID="TextBox6" runat="server" Width="200px"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="auto-style4">
+                                            <td class="auto-style2">
                                                 <asp:Label ID="Label13" runat="server" Text="Address Line 2"></asp:Label></td>
-                                            <td class="auto-style5">
-                                                <asp:TextBox ID="TextBox7" runat="server" Width="200px"></asp:TextBox>
+                                            <td>
+                                                <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="auto-style2">
                                                 <asp:Label ID="Label14" runat="server" Text="City"></asp:Label></td>
                                             <td>
-                                                <asp:TextBox ID="TextBox8" runat="server" Width="200px"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="auto-style2">
-                                                State</td>
+                                                <asp:Label ID="Label15" runat="server" Text="State"></asp:Label></td>
                                             <td>
                                                 <asp:DropDownList ID="DropDownList3" runat="server">
                                                     <asp:ListItem Value="AL">Alabama</asp:ListItem>
@@ -260,7 +248,6 @@
                                                     <asp:ListItem Value="WV">West Virginia</asp:ListItem>
                                                     <asp:ListItem Value="WI">Wisconsin</asp:ListItem>
                                                     <asp:ListItem Value="WY">Wyoming</asp:ListItem>
-                                                    <asp:ListItem>Other</asp:ListItem>
                                                 </asp:DropDownList>
                                             </td>
                                         </tr>
