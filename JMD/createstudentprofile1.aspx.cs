@@ -160,23 +160,23 @@ namespace JMD
 
 
             SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
-            
-            
+
+
             dbConnection.Open();
             dbConnection.ChangeDatabase("amalviy_LinkedU");
           
-            string SQLString = "SELECT UserName FROM SignUp";
-            SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
+            //string SQLString = "SELECT UserName FROM SignUp";
+            //SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
 
-            //SqlDataReader idRecords = checkIDTable.ExecuteReader();
-            SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
-            DataSet ds = new DataSet();
-            da.Fill(ds,"SignUp");
-          
-            string usern = ds.Tables["SignUp"].Rows[0]["UserName"].ToString();
+            ////SqlDataReader idRecords = checkIDTable.ExecuteReader();
+            //SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds,"SignUp");
+
+            string usern = Session["useridsess"].ToString();
 
 
-            Console.Write("Successfully selected the database");
+            //Console.Write("Successfully selected the database");
 
             try
             {

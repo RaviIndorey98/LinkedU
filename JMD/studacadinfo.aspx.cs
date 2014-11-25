@@ -32,19 +32,19 @@ namespace JMD
                 Response.Redirect("Home.aspx");
             }
            
-            SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
-            dbConnection.Open();
-            dbConnection.ChangeDatabase("amalviy_LinkedU");
+            //SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+            //dbConnection.Open();
+            //dbConnection.ChangeDatabase("amalviy_LinkedU");
             
-            string SQLString = "SELECT UserName FROM StudentProfile";
-            SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
+            //string SQLString = "SELECT UserName FROM StudentProfile";
+            //SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
 
-            //SqlDataReader idRecords = checkIDTable.ExecuteReader();
-            SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "StudentProfile");
-            Label2.Text = ds.Tables["StudentProfile"].Rows[0]["UserName"].ToString();
-
+            ////SqlDataReader idRecords = checkIDTable.ExecuteReader();
+            //SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds, "StudentProfile");
+            //Label2.Text = ds.Tables["StudentProfile"].Rows[0]["UserName"].ToString();
+            Label2.Text = Session["useridsess"].ToString();
             if (IsPostBack == false)
             {
                 //get reference of your webservice
@@ -377,7 +377,7 @@ namespace JMD
             SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
             DataSet ds = new DataSet();
             da.Fill(ds, "SignUp");
-            Label2.Text = ds.Tables["SignUp"].Rows[0]["UserName"].ToString();
+            Label2.Text = Session["useridsess"].ToString();
 
 
             Label256.Visible = true;
@@ -543,7 +543,7 @@ namespace JMD
             //    Label38.Text = "invalid total score";
             //}
 
-            string hsName = Label2.Text;
+            string hsName = TextBox1.Text;
             string add1 = TextBox6.Text;
             string add2 = TextBox7.Text;
             string city = TextBox8.Text;
@@ -552,7 +552,7 @@ namespace JMD
             string phoneNum = TextBox9.Text;
             string cgpa = TextBox10.Text;
             string cgpaRange = TextBox11.Text;
-
+            string userid = Label2.Text;
             string act = TextBox12.Text;
             string sat = TextBox13.Text;
             string toefl = TextBox14.Text;
@@ -622,7 +622,7 @@ namespace JMD
                     //+ " " + "','"
                     //+ " " + "','"
                     //+ " " + "','"
-                    + "student" + "','"
+                    + userid + "','"
                     + ach_sports + "','"
                     + ach_social + "','"
                     + interest1 + "','"

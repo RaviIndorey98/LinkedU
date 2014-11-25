@@ -22,22 +22,18 @@
      
 					<li>
                         <asp:TextBox  ID="TextBox1" runat="server" placeholder="UserName"></asp:TextBox>
-						<a href="#" class="icon ticker"> </a>
 						<div class="clear"> </div>
 					</li> 
 					<li>
                         <asp:TextBox  ID="TextBox2" runat="server" placeholder="Email"></asp:TextBox>
-						<a href="#" class="icon ticker"> </a>
 						<div class="clear"> </div>
 					</li> 
 					<li>
                         <asp:TextBox  ID="TextBox3" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-						<a href="#" class="icon into"> </a>
 						<div class="clear"> </div>
 					</li> 
 					<li>
                         <asp:TextBox  ID="TextBox4" runat="server" placeholder="Re-Enter Password" TextMode="Password"></asp:TextBox>
-						<a href="#" class="icon into"> </a>
 						<div class="clear"> </div>
 					</li> 
             <li>
