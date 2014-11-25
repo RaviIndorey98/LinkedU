@@ -17,7 +17,7 @@ namespace JMD
             {
                 //get reference of your webservice
                 ServiceReference1.countrySoapClient ct = new ServiceReference1.countrySoapClient();
-                ServiceReference2.USZipSoapClient cd = new ServiceReference2.USZipSoapClient();
+               
               //  myservice.country ct = new myservice.country();
 
                 // str is an XML String which will hold all the countries in xml format

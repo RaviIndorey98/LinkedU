@@ -31,15 +31,6 @@ namespace JMD {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-        
-        /// <summary>
         /// Label6 control.
         /// </summary>
         /// <remarks>
@@ -382,13 +373,13 @@ namespace JMD {
         protected global::System.Web.UI.WebControls.Button Button_SOP;
         
         /// <summary>
-        /// Button2 control.
+        /// SOPLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label SOPLabel;
         
         /// <summary>
         /// FileUpload2 control.
@@ -409,6 +400,15 @@ namespace JMD {
         protected global::System.Web.UI.WebControls.Button Button_Trans;
         
         /// <summary>
+        /// TranscriptLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TranscriptLabel;
+        
+        /// <summary>
         /// FileUpload3 control.
         /// </summary>
         /// <remarks>
@@ -427,22 +427,22 @@ namespace JMD {
         protected global::System.Web.UI.WebControls.Button Button_resume;
         
         /// <summary>
-        /// Label256 control.
+        /// ResumeLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label256;
+        protected global::System.Web.UI.WebControls.Label ResumeLabel;
         
         /// <summary>
-        /// Label2 control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
         /// GridView1 control.
@@ -589,15 +589,6 @@ namespace JMD {
         protected global::System.Web.UI.WebControls.Label Label32;
         
         /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
         /// Button9 control.
         /// </summary>
         /// <remarks>
@@ -605,6 +596,15 @@ namespace JMD {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button9;
+        
+        /// <summary>
+        /// Label4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
         /// Button10 control.
