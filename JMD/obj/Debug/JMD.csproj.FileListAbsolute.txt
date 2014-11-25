@@ -16,3 +16,9 @@ H:\LinkedU\JMD\bin\AjaxMin.dll
 H:\LinkedU\JMD\obj\Debug\JMD.csprojResolveAssemblyReference.cache
 H:\LinkedU\JMD\obj\Debug\JMD.dll
 H:\LinkedU\JMD\obj\Debug\JMD.pdb
+H:\WebAndConsoleApps\Project\LinkedU\JMD\bin\JMD.dll
+H:\WebAndConsoleApps\Project\LinkedU\JMD\bin\JMD.pdb
+H:\WebAndConsoleApps\Project\LinkedU\JMD\bin\AjaxMin.dll
+H:\WebAndConsoleApps\Project\LinkedU\JMD\obj\Debug\JMD.csprojResolveAssemblyReference.cache
+H:\WebAndConsoleApps\Project\LinkedU\JMD\obj\Debug\JMD.dll
+H:\WebAndConsoleApps\Project\LinkedU\JMD\obj\Debug\JMD.pdb

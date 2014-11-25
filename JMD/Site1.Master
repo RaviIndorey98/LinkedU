@@ -3,12 +3,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-   <title>ARaynorDesign Template</title>
+   <title>LinkedU</title>
   <meta name="description" content="free website template" />
   <meta name="keywords" content="enter your keywords here" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=9" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="style2.css" />
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/image_slide.js"></script>
 </head>
@@ -22,6 +22,8 @@
 	    </div><!--close welcome-->
 	    <div id="welcome_slogan">
 	      <h1>Student</h1>
+            
+
 	    </div><!--close welcome_slogan-->
 	  </div><!--close banner-->
     </div><!--close header-->
@@ -31,9 +33,9 @@
         
          <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Home</asp:LinkButton></li>
           <li><asp:LinkButton ID="LinkButton1" runat="server">Profile</asp:LinkButton></li>
-          <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Admission Requirments</asp:LinkButton></li>
-          <li><asp:LinkButton ID="LinkButton3" runat="server">Posting</asp:LinkButton></li>
-          <li><asp:LinkButton ID="LinkButton4" runat="server">Browser</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Academic Information</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton3" runat="server">Search</asp:LinkButton></li>
+          
           <li><asp:LinkButton ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">Logout</asp:LinkButton></li>
         </ul>
     </div><!--close menubar-->	
@@ -73,73 +75,17 @@
             <p>Email: <a href="mailto:info@youremail.co.uk">info@youremail.co.uk</a></p>
           </div><!--close sidebar_item--> 
         </div><!--close sidebar-->
-       </div><!--close sidebar_container--%>-->	
-	
-	 <%--<div class="slideshow">
+       </div><!--close sidebar_container--%>&nbsp;<%--<div class="slideshow">
 	    <ul class="slideshow">
           <li class="show"><img width="680" height="250" src="images/home_1.jpg" alt="&quot;Enter your caption here&quot;" /></li>
           <li><img width="680" height="250" src="images/home_2.jpg" alt="&quot;Enter your caption here&quot;" /></li>
         </ul>
-      </div>--%>
-        <div id="content">
+      </div>--%><div id="content">
         <div class="content_item">
              <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
             </div>
 	 </div>
-	  <<%--div id="content">
-        <div class="content_item">
-		  <h1>Welcome To Your Website</h1> 
-	      <p>This standards compliant, simple, fixed width website template is released as an &lsquo;open source&rsquo; design (under the Creative Commons Attribution 3.0 Licence), which means that you are free to download and use it for anything you want (including modifying and amending it). If you wish to remove the &lsquo;ARaynorDesign&rsquo; link in the footer of the template, all I ask is for a donation of &pound;20.00 GBP.</p>	  
-		  
-		  <div class="content_image">
-		    <img src="images/content_image1.jpg" alt="image1"/>
-	      </div>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt.</p>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>
-		  <br style="clear:both"/>
-		  
-		  <div class="content_container">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt.</p>
-		  	<div class="button_small">
-		      <a href="#">Read more</a>
-		    </div><!--close button_small-->
-		  </div><!--close content_container-->
-          <div class="content_container">
-		    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim. Aliquam facilisis neque non nunc posuere eget volutpat metus tincidunt.</p>          
-		  	<div class="button_small">
-		      <a href="#">Read more</a>
-		    </div><!--close button_small-->		  
-		  </div><!--close content_container-->			  
-		</div><!--close content_item-->
-      </div><!--close content-->   
-	</div><!--close site_content--> --%>
-    
-<%--	<div id="content_bottom">
-	  <div class="content_bottom_container_box">
-		<h4>Latest Blog Post</h4>
-	    <p> Phasellus laoreet feugiat risus. Ut tincidunt, ante vel fermentum iaculis.</p>
-		<div class="readmore">
-		  <a href="#">Read more</a>
-		</div><!--close readmore-->
-	  </div><!--close content_bottom_container_box-->
-      <div class="content_bottom_container_box">
-       <h4>Latest News</h4>
-	    <p> Phasellus laoreet feugiat risus. Ut tincidunt, ante vel fermentum iaculis.</p>
-	    <div class="readmore">
-		  <a href="#">Read more</a>
-		</div><!--close readmore-->
-	  </div><!--close content_bottom_container_box-->
-      <div class="content_bottom_container_boxl">
-		<h4>Latest Projects</h4>
-	    <p> Phasellus laoreet feugiat risus. Ut tincidunt, ante vel fermentum iaculis.</p>
-	    <div class="readmore">
-		  <a href="#">Read more</a>
-		</div><!--close readmore-->	  
-	  </div><!--close content_bottom_container_box1-->      
-	  <br style="clear:both"/>
-    </div><!--close content_bottom-->   
- --%>
   </div><!--close main-->
   
   
