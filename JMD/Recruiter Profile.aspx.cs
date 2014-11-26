@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -12,13 +13,13 @@ namespace JMD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["useridsess"] != null)
+            if (Session["useridse"] != null)
             {
                 //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
                 SessionParameter empid = new SessionParameter();
-                empid.Name = "useridsess";
+                empid.Name = "useridse";
                 empid.Type = TypeCode.Int32;
-                empid.SessionField = "useridsess";
+                empid.SessionField = "useridse";
             }
             String email = (@"^[_a-z0-9\-]+(\.[_a-z0-9\-]+)*@[a-z0-9\-]+(\.[_a-z0-9\-]+)*(\.[a-z]{2,3})$");
             String phone = (@"^(1 )?(\([0-9]{3}\) )?([1-9]{3})(\-[1-9]{4})$");
@@ -57,7 +58,54 @@ namespace JMD
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string usern = Session["useridse"].ToString();
 
+            string firstname = TextBox1.Text;
+            string lastname = TextBox15.Text;
+            string univname = TextBox2.Text;
+            string state = DropDownList1.SelectedValue.ToString();
+            string city = TextBox17.Text;
+            string zip = TextBox18.Text;
+            //string birthday = txtStartDate.Text;
+            //Convert.ToDateTime(birthday);
+            //string hisp = CheckBox1.Text.ToString();
+            string emailid = TextBox3.Text;
+            string phone = TextBox5.Text;
+            string day = DropDownList2.SelectedItem.ToString() + DropDownList3.SelectedItem.ToString();
+            string time = CheckBoxList1.SelectedItem.ToString();
+            //string state = DropDownList3.SelectedValue.ToString();
+            //string zip = TextBox10.Text;
+            //string fpcode = TextBox11.Text;
+            //string country = DropDownList2.SelectedItem.ToString();
+
+
+            SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+
+
+            dbConnection.Open();
+            dbConnection.ChangeDatabase("amalviy_LinkedU");
+
+            
+
+                string studentInfo =
+                  "INSERT INTO RecruiterProfile VALUES('"
+                   + usern + "', '"
+                   + firstname + "', '"
+                   + lastname + "', '"
+                   + univname + "', '"
+                   + city + "', '"
+                   + state + "', '"
+                   + zip + "', '"
+                   + emailid + "', '"
+                   + phone + "')";
+
+
+
+
+            
+                SqlCommand sqlCommand2 = new SqlCommand(studentInfo, dbConnection);
+                sqlCommand2.ExecuteNonQuery();
+            dbConnection.Close();
 
             Response.Redirect("RecruiterPosting.aspx");
         }

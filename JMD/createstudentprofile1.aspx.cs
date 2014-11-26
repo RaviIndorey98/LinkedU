@@ -140,6 +140,8 @@ namespace JMD
         protected void Button1_Click(object sender, EventArgs e)
         {
             //Label1.Visible = false;
+            string usern = Session["useridsess"].ToString();
+
             string firstname = TextBox1.Text;
             string lastname = TextBox2.Text;
             string suffix = DropDownList1.SelectedValue.ToString();
@@ -164,20 +166,7 @@ namespace JMD
 
             dbConnection.Open();
             dbConnection.ChangeDatabase("amalviy_LinkedU");
-          
-            //string SQLString = "SELECT UserName FROM SignUp";
-            //SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
-
-            ////SqlDataReader idRecords = checkIDTable.ExecuteReader();
-            //SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds,"SignUp");
-
-            string usern = Session["useridsess"].ToString();
-
-
-            //Console.Write("Successfully selected the database");
-
+         
             try
             {
 
