@@ -59,7 +59,10 @@ namespace JMD
         protected void Button1_Click(object sender, EventArgs e)
         {
             string usern = Session["useridse"].ToString();
-
+            Session["useridstate"] = DropDownList1.SelectedValue.ToString();
+            Session["useriduniv"] = TextBox2.Text;
+            Session["useridcity"] = TextBox17.Text;
+            Session["useridzip"] = TextBox18.Text;
             string firstname = TextBox1.Text;
             string lastname = TextBox15.Text;
             string univname = TextBox2.Text;
@@ -72,7 +75,12 @@ namespace JMD
             string emailid = TextBox3.Text;
             string phone = TextBox5.Text;
             string time = DropDownList2.SelectedItem.ToString() + DropDownList3.SelectedItem.ToString();
-            string day = CheckBoxList1.SelectedIndex.ToString();
+            string interests = string.Empty;
+            foreach (ListItem item in this.CheckBoxList1.Items)
+                if (item.Selected)
+                    interests += item + ",";
+
+           // string day = CheckBoxList1.
             //string state = DropDownList3.SelectedValue.ToString();
             //string zip = TextBox10.Text;
             //string fpcode = TextBox11.Text;
@@ -102,7 +110,7 @@ namespace JMD
                 string auInfo =
                       "INSERT INTO RecruiterTime VALUES('"
                        + usern + "', '"
-                       + day + "', '"
+                       + interests + "', '"
                        + time + "')";
 
 

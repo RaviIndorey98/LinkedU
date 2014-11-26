@@ -58,16 +58,208 @@
        
     
         <br />
-            <asp:Label ID="Label1" runat="server" Text="Select Department"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+            <asp:Label ID="Label1" runat="server" Text="Select Department"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+            &nbsp; 
+            <br />
         <asp:DropDownList ID="courseList" runat="server" Height="19px" Width="285px">
-            <asp:ListItem>course list</asp:ListItem>
+           <asp:ListItem>--Select--</asp:ListItem>
+                                            <asp:ListItem>ART - School of Art</asp:ListItem>
+                                            <asp:ListItem>ATK - Arts Technology</asp:ListItem>
+                                            <asp:ListItem>BSC - School of Biological Sciences</asp:ListItem>
+                                            <asp:ListItem>BTE - Business Teacher Education</asp:ListItem>
+                                            <asp:ListItem>BUS - Business Accreditation</asp:ListItem>
+                                            <asp:ListItem>CHE - Chemistry</asp:ListItem>
+                                            <asp:ListItem>CJS - Criminal Justice Sciences</asp:ListItem>
+                                            <asp:ListItem>COM - School of Communication</asp:ListItem>
+                                            <asp:ListItem>CSD - Communication Sciences and Disorders</asp:ListItem>
+                                            <asp:ListItem>EAF - Educational Administration &amp; Foundations</asp:ListItem>
+                                            <asp:ListItem>ECO - Economics</asp:ListItem>
+                                            <asp:ListItem>ENG - English</asp:ListItem>
+                                            <asp:ListItem>FCS - Family and Consumer Sciences</asp:ListItem>
+                                            <asp:ListItem>FIL - Finance, Insurance and Law</asp:ListItem>
+                                            <asp:ListItem>GEO - Geography - Geology</asp:ListItem>
+                                            <asp:ListItem>HIS - History</asp:ListItem>
+                                            <asp:ListItem>HSC - Health Sciences</asp:ListItem>
+                                            <asp:ListItem>IB - International Business</asp:ListItem>
+                                            <asp:ListItem>IDS - Interdisciplinary Studies</asp:ListItem>
+                                            <asp:ListItem>IT - School of Information Technology</asp:ListItem>
+                                            <asp:ListItem>KNR - School of Kinesiology and Recreation</asp:ListItem>
+                                            <asp:ListItem>LAN - Languages, Literatures and Cultures</asp:ListItem>
+                                            <asp:ListItem>MAT - Mathematics</asp:ListItem>
+                                            <asp:ListItem>MBA - Masters of Business Administration</asp:ListItem>
+                                            <asp:ListItem>MKT - Marketing</asp:ListItem>
+                                            <asp:ListItem>MQM - Management and Quantitative Methods</asp:ListItem>
+                                            <asp:ListItem>MSC - Military Science</asp:ListItem>
+                                            <asp:ListItem>MUS - School of Music</asp:ListItem>
+                                            <asp:ListItem>NUR - Mennonite College of Nursing</asp:ListItem>
+                                            <asp:ListItem>PHI - Philosophy</asp:ListItem>
+                                            <asp:ListItem>PHY - Physics</asp:ListItem>
+                                            <asp:ListItem>POL - Politics and Government</asp:ListItem>
+                                            <asp:ListItem>PSY - Psychology</asp:ListItem>
+                                            <asp:ListItem>SED - Special Education</asp:ListItem>
+                                            <asp:ListItem>SOA - Sociology and Anthropology</asp:ListItem>
+                                            <asp:ListItem>STT - Clinical Experiences in Teacher Education</asp:ListItem>
+                                            <asp:ListItem>SWK - School of Social Work</asp:ListItem>
+                                            <asp:ListItem>TCH - School of Teaching and Learning</asp:ListItem>
+                                            <asp:ListItem>TEC - Technology</asp:ListItem>
+                                            <asp:ListItem>THD - School of Theatre and Dance</asp:ListItem>
+                                            <asp:ListItem>WGS - Women&#39;s and Gender Studies</asp:ListItem>
+                                        
         </asp:DropDownList>
-            <br />
-            <br />
-
-            <asp:Label ID="Label2" runat="server" Text="Course"></asp:Label>
+            &nbsp;&nbsp;<asp:Label ID="Label2" runat="server" Text="Course"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="course" runat="server"></asp:TextBox>
+ 
+             <asp:DropDownList ID="DropDownList1" runat="server" Height="19px" Width="285px">
+           <asp:ListItem>--Select--</asp:ListItem>
+                                            <asp:ListItem>ART - School of Art</asp:ListItem>
+                                            <asp:ListItem>ATK - Arts Technology</asp:ListItem>
+                                            <asp:ListItem>BSC - School of Biological Sciences</asp:ListItem>
+                                            <asp:ListItem>BTE - Business Teacher Education</asp:ListItem>
+                                            <asp:ListItem>BUS - Business Accreditation</asp:ListItem>
+                                            <asp:ListItem>CHE - Chemistry</asp:ListItem>
+                                            <asp:ListItem>CJS - Criminal Justice Sciences</asp:ListItem>
+                                            <asp:ListItem>COM - School of Communication</asp:ListItem>
+                                            <asp:ListItem>CSD - Communication Sciences and Disorders</asp:ListItem>
+                                            <asp:ListItem>EAF - Educational Administration &amp; Foundations</asp:ListItem>
+                                            <asp:ListItem>ECO - Economics</asp:ListItem>
+                                            <asp:ListItem>ENG - English</asp:ListItem>
+                                            <asp:ListItem>FCS - Family and Consumer Sciences</asp:ListItem>
+                                            <asp:ListItem>FIL - Finance, Insurance and Law</asp:ListItem>
+                                            <asp:ListItem>GEO - Geography - Geology</asp:ListItem>
+                                            <asp:ListItem>HIS - History</asp:ListItem>
+                                            <asp:ListItem>HSC - Health Sciences</asp:ListItem>
+                                            <asp:ListItem>IB - International Business</asp:ListItem>
+                                            <asp:ListItem>IDS - Interdisciplinary Studies</asp:ListItem>
+                                            <asp:ListItem>IT - School of Information Technology</asp:ListItem>
+                                            <asp:ListItem>KNR - School of Kinesiology and Recreation</asp:ListItem>
+                                            <asp:ListItem>LAN - Languages, Literatures and Cultures</asp:ListItem>
+                                            <asp:ListItem>MAT - Mathematics</asp:ListItem>
+                                            <asp:ListItem>MBA - Masters of Business Administration</asp:ListItem>
+                                            <asp:ListItem>MKT - Marketing</asp:ListItem>
+                                            <asp:ListItem>MQM - Management and Quantitative Methods</asp:ListItem>
+                                            <asp:ListItem>MSC - Military Science</asp:ListItem>
+                                            <asp:ListItem>MUS - School of Music</asp:ListItem>
+                                            <asp:ListItem>NUR - Mennonite College of Nursing</asp:ListItem>
+                                            <asp:ListItem>PHI - Philosophy</asp:ListItem>
+                                            <asp:ListItem>PHY - Physics</asp:ListItem>
+                                            <asp:ListItem>POL - Politics and Government</asp:ListItem>
+                                            <asp:ListItem>PSY - Psychology</asp:ListItem>
+                                            <asp:ListItem>SED - Special Education</asp:ListItem>
+                                            <asp:ListItem>SOA - Sociology and Anthropology</asp:ListItem>
+                                            <asp:ListItem>STT - Clinical Experiences in Teacher Education</asp:ListItem>
+                                            <asp:ListItem>SWK - School of Social Work</asp:ListItem>
+                                            <asp:ListItem>TCH - School of Teaching and Learning</asp:ListItem>
+                                            <asp:ListItem>TEC - Technology</asp:ListItem>
+                                            <asp:ListItem>THD - School of Theatre and Dance</asp:ListItem>
+                                            <asp:ListItem>WGS - Women&#39;s and Gender Studies</asp:ListItem>
+                                        
+        </asp:DropDownList>
+       
+            &nbsp;&nbsp;<asp:Label ID="Label37" runat="server" Text="Course"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+ 
+             <asp:DropDownList ID="DropDownList2" runat="server" Height="19px" Width="285px">
+           <asp:ListItem>--Select--</asp:ListItem>
+                                            <asp:ListItem>ART - School of Art</asp:ListItem>
+                                            <asp:ListItem>ATK - Arts Technology</asp:ListItem>
+                                            <asp:ListItem>BSC - School of Biological Sciences</asp:ListItem>
+                                            <asp:ListItem>BTE - Business Teacher Education</asp:ListItem>
+                                            <asp:ListItem>BUS - Business Accreditation</asp:ListItem>
+                                            <asp:ListItem>CHE - Chemistry</asp:ListItem>
+                                            <asp:ListItem>CJS - Criminal Justice Sciences</asp:ListItem>
+                                            <asp:ListItem>COM - School of Communication</asp:ListItem>
+                                            <asp:ListItem>CSD - Communication Sciences and Disorders</asp:ListItem>
+                                            <asp:ListItem>EAF - Educational Administration &amp; Foundations</asp:ListItem>
+                                            <asp:ListItem>ECO - Economics</asp:ListItem>
+                                            <asp:ListItem>ENG - English</asp:ListItem>
+                                            <asp:ListItem>FCS - Family and Consumer Sciences</asp:ListItem>
+                                            <asp:ListItem>FIL - Finance, Insurance and Law</asp:ListItem>
+                                            <asp:ListItem>GEO - Geography - Geology</asp:ListItem>
+                                            <asp:ListItem>HIS - History</asp:ListItem>
+                                            <asp:ListItem>HSC - Health Sciences</asp:ListItem>
+                                            <asp:ListItem>IB - International Business</asp:ListItem>
+                                            <asp:ListItem>IDS - Interdisciplinary Studies</asp:ListItem>
+                                            <asp:ListItem>IT - School of Information Technology</asp:ListItem>
+                                            <asp:ListItem>KNR - School of Kinesiology and Recreation</asp:ListItem>
+                                            <asp:ListItem>LAN - Languages, Literatures and Cultures</asp:ListItem>
+                                            <asp:ListItem>MAT - Mathematics</asp:ListItem>
+                                            <asp:ListItem>MBA - Masters of Business Administration</asp:ListItem>
+                                            <asp:ListItem>MKT - Marketing</asp:ListItem>
+                                            <asp:ListItem>MQM - Management and Quantitative Methods</asp:ListItem>
+                                            <asp:ListItem>MSC - Military Science</asp:ListItem>
+                                            <asp:ListItem>MUS - School of Music</asp:ListItem>
+                                            <asp:ListItem>NUR - Mennonite College of Nursing</asp:ListItem>
+                                            <asp:ListItem>PHI - Philosophy</asp:ListItem>
+                                            <asp:ListItem>PHY - Physics</asp:ListItem>
+                                            <asp:ListItem>POL - Politics and Government</asp:ListItem>
+                                            <asp:ListItem>PSY - Psychology</asp:ListItem>
+                                            <asp:ListItem>SED - Special Education</asp:ListItem>
+                                            <asp:ListItem>SOA - Sociology and Anthropology</asp:ListItem>
+                                            <asp:ListItem>STT - Clinical Experiences in Teacher Education</asp:ListItem>
+                                            <asp:ListItem>SWK - School of Social Work</asp:ListItem>
+                                            <asp:ListItem>TCH - School of Teaching and Learning</asp:ListItem>
+                                            <asp:ListItem>TEC - Technology</asp:ListItem>
+                                            <asp:ListItem>THD - School of Theatre and Dance</asp:ListItem>
+                                            <asp:ListItem>WGS - Women&#39;s and Gender Studies</asp:ListItem>
+                                        
+        </asp:DropDownList>
+       
+            
+&nbsp;&nbsp;<asp:Label ID="Label40" runat="server" Text="Course"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+ 
+             <asp:DropDownList ID="DropDownList3" runat="server" Height="19px" Width="285px">
+           <asp:ListItem>--Select--</asp:ListItem>
+                                            <asp:ListItem>ART - School of Art</asp:ListItem>
+                                            <asp:ListItem>ATK - Arts Technology</asp:ListItem>
+                                            <asp:ListItem>BSC - School of Biological Sciences</asp:ListItem>
+                                            <asp:ListItem>BTE - Business Teacher Education</asp:ListItem>
+                                            <asp:ListItem>BUS - Business Accreditation</asp:ListItem>
+                                            <asp:ListItem>CHE - Chemistry</asp:ListItem>
+                                            <asp:ListItem>CJS - Criminal Justice Sciences</asp:ListItem>
+                                            <asp:ListItem>COM - School of Communication</asp:ListItem>
+                                            <asp:ListItem>CSD - Communication Sciences and Disorders</asp:ListItem>
+                                            <asp:ListItem>EAF - Educational Administration &amp; Foundations</asp:ListItem>
+                                            <asp:ListItem>ECO - Economics</asp:ListItem>
+                                            <asp:ListItem>ENG - English</asp:ListItem>
+                                            <asp:ListItem>FCS - Family and Consumer Sciences</asp:ListItem>
+                                            <asp:ListItem>FIL - Finance, Insurance and Law</asp:ListItem>
+                                            <asp:ListItem>GEO - Geography - Geology</asp:ListItem>
+                                            <asp:ListItem>HIS - History</asp:ListItem>
+                                            <asp:ListItem>HSC - Health Sciences</asp:ListItem>
+                                            <asp:ListItem>IB - International Business</asp:ListItem>
+                                            <asp:ListItem>IDS - Interdisciplinary Studies</asp:ListItem>
+                                            <asp:ListItem>IT - School of Information Technology</asp:ListItem>
+                                            <asp:ListItem>KNR - School of Kinesiology and Recreation</asp:ListItem>
+                                            <asp:ListItem>LAN - Languages, Literatures and Cultures</asp:ListItem>
+                                            <asp:ListItem>MAT - Mathematics</asp:ListItem>
+                                            <asp:ListItem>MBA - Masters of Business Administration</asp:ListItem>
+                                            <asp:ListItem>MKT - Marketing</asp:ListItem>
+                                            <asp:ListItem>MQM - Management and Quantitative Methods</asp:ListItem>
+                                            <asp:ListItem>MSC - Military Science</asp:ListItem>
+                                            <asp:ListItem>MUS - School of Music</asp:ListItem>
+                                            <asp:ListItem>NUR - Mennonite College of Nursing</asp:ListItem>
+                                            <asp:ListItem>PHI - Philosophy</asp:ListItem>
+                                            <asp:ListItem>PHY - Physics</asp:ListItem>
+                                            <asp:ListItem>POL - Politics and Government</asp:ListItem>
+                                            <asp:ListItem>PSY - Psychology</asp:ListItem>
+                                            <asp:ListItem>SED - Special Education</asp:ListItem>
+                                            <asp:ListItem>SOA - Sociology and Anthropology</asp:ListItem>
+                                            <asp:ListItem>STT - Clinical Experiences in Teacher Education</asp:ListItem>
+                                            <asp:ListItem>SWK - School of Social Work</asp:ListItem>
+                                            <asp:ListItem>TCH - School of Teaching and Learning</asp:ListItem>
+                                            <asp:ListItem>TEC - Technology</asp:ListItem>
+                                            <asp:ListItem>THD - School of Theatre and Dance</asp:ListItem>
+                                            <asp:ListItem>WGS - Women&#39;s and Gender Studies</asp:ListItem>
+                                        
+        </asp:DropDownList>
+           &nbsp;&nbsp;<asp:Label ID="Label41" runat="server" Text="Course"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+ 
             <br />
             <br />
             <asp:Label ID="Label3" runat="server" Text="Requirements"></asp:Label>
@@ -109,21 +301,18 @@
 
             <br />
                         <br />
-            <asp:Label ID="Label5" runat="server" Text="Student Should have extracurricular"></asp:Label>
+            
            
             &nbsp;&nbsp;&nbsp;
            
-            <asp:CheckBox ID="CheckBox1" runat="server" />
-            &nbsp;<asp:Label ID="Label20" runat="server" Text="Yes"></asp:Label>
-           
-            <asp:CheckBox ID="CheckBox2" runat="server" />
-            &nbsp;<asp:Label ID="Label21" runat="server" Text="No"></asp:Label><br />
-            <br />
+            <asp:Label ID="Label5" runat="server" Text="Student Should have extracurricular"></asp:Label>&nbsp;&nbsp;<asp:CheckBoxList ID="CheckBoxList1" runat="server" Height="44px" Width="110px">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:CheckBoxList>
             <br />
 
             <asp:CheckBox ID="CheckBox3" runat="server" />
             &nbsp;<asp:Label ID="Label6" runat="server" Text="SOP"></asp:Label>
-            <br />
             <br />
             <br />
             <asp:Label ID="Label7" runat="server" Text="Number of LORs Required"></asp:Label>
@@ -147,27 +336,31 @@
             <asp:Label ID="Label10" runat="server" Text="Session"></asp:Label>
             <br />
             <br />
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                <asp:ListItem>Spring-2015</asp:ListItem>
-                <asp:ListItem>Fall-2015</asp:ListItem>
-                <asp:ListItem>Summer-2015</asp:ListItem>
-                <asp:ListItem>Spring-2016</asp:ListItem>
-                <asp:ListItem>Fall-2016</asp:ListItem>
-                <asp:ListItem>Summer-2016</asp:ListItem>
-            </asp:RadioButtonList>
+            <asp:CheckBox ID="CheckBox8" runat="server" Text="Spring" />
+            <br />
+            <asp:CheckBox ID="CheckBox9" runat="server" Text="Fall" />
+            <br />
+            <asp:CheckBox ID="CheckBox10" runat="server" Text="Summer" />
+            <br />
             <br />
             <asp:UpdatePanel ID="updPnel1" runat="server">
                 <ContentTemplate>
 
-                    <asp:Label ID="Label11" runat="server" Text="Deadline"></asp:Label>
-                    
+                    <asp:Label ID="Label11" runat="server" Text="Spring Deadline"></asp:Label>
                      <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
         <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>
         <asp:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtStartDate"></asp:CalendarExtender>
-        <br />
-        <br />
-        <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                    <br/>
+        <asp:Label ID="Label35" runat="server" Text="Fall Deadline"></asp:Label>
                     
+                     
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="TextBox2"></asp:CalendarExtender>
+                    <br />
+        <asp:Label ID="Label36" runat="server" Text="Summer Deadline"></asp:Label>
+                     
+        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+        <asp:CalendarExtender ID="CalendarExtender3" runat="server" TargetControlID="TextBox5"></asp:CalendarExtender>            
                     <br />
                 </ContentTemplate>
             </asp:UpdatePanel>
