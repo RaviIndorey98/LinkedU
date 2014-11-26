@@ -71,8 +71,8 @@ namespace JMD
             //string hisp = CheckBox1.Text.ToString();
             string emailid = TextBox3.Text;
             string phone = TextBox5.Text;
-            string day = DropDownList2.SelectedItem.ToString() + DropDownList3.SelectedItem.ToString();
-            string time = CheckBoxList1.SelectedItem.ToString();
+            string time = DropDownList2.SelectedItem.ToString() + DropDownList3.SelectedItem.ToString();
+            string day = CheckBoxList1.SelectedIndex.ToString();
             //string state = DropDownList3.SelectedValue.ToString();
             //string zip = TextBox10.Text;
             //string fpcode = TextBox11.Text;
@@ -99,12 +99,20 @@ namespace JMD
                    + emailid + "', '"
                    + phone + "')";
 
+                string auInfo =
+                      "INSERT INTO RecruiterTime VALUES('"
+                       + usern + "', '"
+                       + day + "', '"
+                       + time + "')";
 
 
 
             
                 SqlCommand sqlCommand2 = new SqlCommand(studentInfo, dbConnection);
                 sqlCommand2.ExecuteNonQuery();
+                SqlCommand sqlCommand1 = new SqlCommand(auInfo, dbConnection);
+                sqlCommand1.ExecuteNonQuery();
+            
             dbConnection.Close();
 
             Response.Redirect("RecruiterPosting.aspx");

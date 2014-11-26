@@ -7,3 +7,6 @@ H:\IT485\LinkedU\JMD\obj\Debug\JMD.pdb
 H:\LinkedU\JMD\obj\Debug\LinkedU.csprojResolveAssemblyReference.cache
 H:\LinkedU\JMD\obj\Debug\JMD.dll
 H:\LinkedU\JMD\obj\Debug\JMD.pdb
+H:\LinkedU\JMD\bin\JMD.dll
+H:\LinkedU\JMD\bin\JMD.pdb
+H:\LinkedU\JMD\bin\AjaxMin.dll
