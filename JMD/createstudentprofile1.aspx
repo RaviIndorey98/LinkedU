@@ -7,7 +7,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>ARaynorDesign Template</title>
+    <title>Create Student Profile</title>
     <meta name="description" content="free website template" />
     <meta name="keywords" content="enter your keywords here" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />

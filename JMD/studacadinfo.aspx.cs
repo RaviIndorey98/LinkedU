@@ -541,7 +541,7 @@ namespace JMD
             string interest1 = DropDownList5.SelectedValue;
             string interest2 = DropDownList6.SelectedValue;
             string interest3 = DropDownList7.SelectedValue;
-            string interest4 = DropDownList8.SelectedValue;
+            
             string interest5 = DropDownList9.SelectedValue;
 
             string preferredCities = TextBox16.Text;
