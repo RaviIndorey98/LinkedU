@@ -67,6 +67,20 @@
                                     <table class="auto-style1" draggable="false">
                                         <tr>
                                             <td class="auto-style3">
+                                                User ID</td>
+                                            <td>
+                                                <asp:Label ID="studUserIDLabel" runat="server"></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style3">
+                                                Email</td>
+                                            <td>
+                                                <asp:Label ID="studEmailLabel" runat="server"></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style3">
                                                 <asp:Label ID="Label1" runat="server" Text="First Name"></asp:Label></td>
                                             <td>
                                                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
@@ -106,14 +120,6 @@
                                                     <asp:ListItem Value="nopes">Don&#39;t want to disclose</asp:ListItem>
                                                 </asp:DropDownList>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="auto-style3">
-                                                <asp:Label ID="Label4" runat="server" Text="EmailID"></asp:Label></td>
-                                            <td>
-                                                <asp:TextBox ID="TextBox3" runat="server" OnTextChanged="TextBox3_TextChanged1"></asp:TextBox>
-                                                <asp:Label ID="Label20" runat="server"></asp:Label></td>
-
                                         </tr>
                                         <tr>
                                             <td class="auto-style3">

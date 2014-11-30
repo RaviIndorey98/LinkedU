@@ -13,20 +13,28 @@ namespace JMD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["useridse"] != null)
+            if (Session["recUserId"] != null)
             {
                 //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
                 SessionParameter empid = new SessionParameter();
-                empid.Name = "useridse";
+                empid.Name = "recUserId";
                 empid.Type = TypeCode.Int32;
-                empid.SessionField = "useridse";
+                empid.SessionField = "recUserId";
             }
-            String email = (@"^[_a-z0-9\-]+(\.[_a-z0-9\-]+)*@[a-z0-9\-]+(\.[_a-z0-9\-]+)*(\.[a-z]{2,3})$");
-            String phone = (@"^(1 )?(\([0-9]{3}\) )?([1-9]{3})(\-[1-9]{4})$");
-            String zip = (@"^([0-9]{5})$|([0-9]{5})(\-[0-9]{4})$");
+            else 
+            {
+                Response.Redirect("Home.aspx");
+            }
+            
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            String emailReg = (@"^[_a-z0-9\-]+(\.[_a-z0-9\-]+)*@[a-z0-9\-]+(\.[_a-z0-9\-]+)*(\.[a-z]{2,3})$");
+            String phoneReg = (@"^(1 )?(\([0-9]{3}\) )?([1-9]{3})(\-[1-9]{4})$");
+            String zipReg = (@"^([0-9]{5})$|([0-9]{5})(\-[0-9]{4})$");
 
 
-            if (Regex.IsMatch(TextBox3.Text, email))
+            if (Regex.IsMatch(TextBox3.Text, emailReg))
             {
                 Label10.Text = "valid email id";
             }
@@ -36,7 +44,7 @@ namespace JMD
             }
 
 
-            if (Regex.IsMatch(TextBox5.Text, phone))
+            if (Regex.IsMatch(TextBox5.Text, phoneReg))
             {
 
                 Label12.Text = "valid Phone No";
@@ -46,7 +54,7 @@ namespace JMD
                 Label12.Text = "invalid Phone No";
             }
 
-            if (Regex.IsMatch(TextBox18.Text, zip))
+            if (Regex.IsMatch(TextBox18.Text, zipReg))
             {
 
                 Label8.Text = "valid Zip";
@@ -55,9 +63,7 @@ namespace JMD
             {
                 Label8.Text = "invalid Zip";
             }
-        }
-        protected void Button1_Click(object sender, EventArgs e)
-        {
+
             string usern = Session["useridse"].ToString();
             Session["useridstate"] = DropDownList1.SelectedValue.ToString();
             Session["useriduniv"] = TextBox2.Text;

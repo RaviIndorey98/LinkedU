@@ -13,21 +13,23 @@ namespace JMD
 {
     public partial class createstudentprofile1 : System.Web.UI.Page
     {
-         
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["useridsess"] != null)
+            if (Session["studUserId"] != null)
             {
-               //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
+                //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
                 SessionParameter empid = new SessionParameter();
-                empid.Name = "useridsess";
+                empid.Name = "studUserId";
                 empid.Type = TypeCode.Int32;
-                empid.SessionField = "useridsess";
-          }
-                else 
-                {
+                empid.SessionField = "studUserId";
+                studUserIDLabel.Text = Session["studUserId"].ToString();
+                studEmailLabel.Text = Session["studEmail"].ToString();
+            }
+            else
+            {
                 Response.Redirect("Home.aspx");
-                }
+            }
             if (IsPostBack == false)
             {
                 //get reference of your webservice
@@ -66,17 +68,17 @@ namespace JMD
                 }
 
             }
-            
-                   
-           
-        }
-        
-        
-                
-            
 
-   
-          
+
+
+        }
+
+
+
+
+
+
+
         protected void TextBox10_TextChanged1(object sender, EventArgs e)
         {
             String zip = (@"^([0-9]{5})$|([0-9]{5})(\-[0-9]{4})$");
@@ -119,28 +121,12 @@ namespace JMD
             }
         }
 
-        protected void TextBox3_TextChanged1(object sender, EventArgs e)
-        {
-            SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
 
-
-            dbConnection.Open();
-            dbConnection.ChangeDatabase("amalviy_LinkedU");
-            string SQLString = "SELECT Email FROM SignUp";
-            SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
-
-            //SqlDataReader idRecords = checkIDTable.ExecuteReader();
-            SqlDataAdapter da = new SqlDataAdapter(checkIDTable);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "SignUp");
-            TextBox3.Text = ds.Tables["SignUp"].Rows[0]["Email"].ToString();
-           
-        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             //Label1.Visible = false;
-            string usern = Session["useridsess"].ToString();
+            string usern = Session["studUserId"].ToString();
 
             string firstname = TextBox1.Text;
             string lastname = TextBox2.Text;
@@ -149,8 +135,8 @@ namespace JMD
             string countryofci = DropDownList5.SelectedValue;
             string ssn = TextBox5.Text;
             string birthday = txtStartDate.Text;
-           Convert.ToDateTime(birthday);
-           string hisp = CheckBox1.Text.ToString();
+            Convert.ToDateTime(birthday);
+            string hisp = CheckBox1.Text.ToString();
             string race = RadioButtonList1.Text.ToString();
             string address1 = TextBox6.Text;
             string address2 = TextBox7.Text;
@@ -166,7 +152,7 @@ namespace JMD
 
             dbConnection.Open();
             dbConnection.ChangeDatabase("amalviy_LinkedU");
-         
+
             try
             {
 

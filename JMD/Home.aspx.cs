@@ -44,12 +44,14 @@ namespace JMD
             dbConnection.Close();
             if (radiolist1.SelectedValue == "student")
             {
-                Session["useridsess"] = TextBox1.Text;
+                Session["studUserId"] = username;
+                Session["studEmail"] = email;
                 Response.Redirect("createstudentprofile1.aspx");
             }
             else if (radiolist1.SelectedValue == "recruiter")
             {
-                Session["useridse"] = TextBox1.Text;
+                Session["recUserId"] = username;
+                Session["recEmail"] = email;
                 Response.Redirect("Recruiter Profile.aspx");
             }
         }

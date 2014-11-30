@@ -31,13 +31,22 @@ namespace JMD {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Label5 control.
+        /// userIdLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label userIdLabel;
+        
+        /// <summary>
+        /// emailLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label emailLabel;
         
         /// <summary>
         /// Label6 control.
@@ -65,15 +74,6 @@ namespace JMD {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
-        
-        /// <summary>
-        /// Label8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
         /// Label22 control.
@@ -382,13 +382,13 @@ namespace JMD {
         protected global::System.Web.UI.WebControls.Button Button_SOP;
         
         /// <summary>
-        /// Button2 control.
+        /// SOP_Label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label SOP_Label;
         
         /// <summary>
         /// FileUpload2 control.
@@ -409,6 +409,15 @@ namespace JMD {
         protected global::System.Web.UI.WebControls.Button Button_Trans;
         
         /// <summary>
+        /// Transcript_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Transcript_Label;
+        
+        /// <summary>
         /// FileUpload3 control.
         /// </summary>
         /// <remarks>
@@ -427,22 +436,22 @@ namespace JMD {
         protected global::System.Web.UI.WebControls.Button Button_resume;
         
         /// <summary>
-        /// Label256 control.
+        /// Resume_Label control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label256;
+        protected global::System.Web.UI.WebControls.Label Resume_Label;
         
         /// <summary>
-        /// Label2 control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
         /// GridView1 control.
@@ -587,15 +596,6 @@ namespace JMD {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label32;
-        
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
         /// Button9 control.
