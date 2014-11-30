@@ -596,7 +596,7 @@ namespace JMD
                 + interest1 + "','"
                 + interest2 + "','"
                 + interest3 + "','"
-                + interest4 + "','"
+                + interest5 + "','"
                 + preferredCities
                 + "')";
 

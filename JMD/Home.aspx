@@ -73,7 +73,7 @@
             </div>
             <div class="clear"></div>
 
-            <asp:Button ID="Button1" runat="server" Text="Login" Height="39px" Width="131px" Style="margin-left: 63px" />
+            <asp:Button ID="Button1" runat="server" Text="Login" Height="39px" Width="131px" Style="margin-left: 63px" OnClick="Button1_Click" />
         </ul>
     <div class="clear"></div>
     </form>

@@ -69,7 +69,7 @@
     <Content Include="bin\AjaxMin.dll" />
     <Content Include="bin\JMD.dll" />
     <Content Include="bin\JMD.pdb" />
-    <Content Include="createstudentprofile1.aspx" />
+    <Content Include="StudentPages\createstudentprofile1.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Icon1.png" />
     <Content Include="index.html" />
@@ -91,7 +91,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="studacadinfo.aspx" />
+    <Content Include="StudentPages\studacadinfo.aspx" />
     <Content Include="style1.css" />
     <Content Include="style.css" />
     <Content Include="stylelog.css" />
@@ -108,11 +108,11 @@
       <DependentUpon>AjaxCascadingDropDown.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="createstudentprofile1.aspx.cs">
+    <Compile Include="StudentPages\createstudentprofile1.aspx.cs">
       <DependentUpon>createstudentprofile1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="createstudentprofile1.aspx.designer.cs">
+    <Compile Include="StudentPages\createstudentprofile1.aspx.designer.cs">
       <DependentUpon>createstudentprofile1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
@@ -147,11 +147,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Site1.Master.cs">
+    <Compile Include="StudentPages\Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site1.Master.designer.cs">
+    <Compile Include="StudentPages\Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
     <Compile Include="Site2.Master.cs">
@@ -161,11 +161,11 @@
     <Compile Include="Site2.Master.designer.cs">
       <DependentUpon>Site2.Master</DependentUpon>
     </Compile>
-    <Compile Include="studacadinfo.aspx.cs">
+    <Compile Include="StudentPages\studacadinfo.aspx.cs">
       <DependentUpon>studacadinfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="studacadinfo.aspx.designer.cs">
+    <Compile Include="StudentPages\studacadinfo.aspx.designer.cs">
       <DependentUpon>studacadinfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentHomePage.aspx.cs">
@@ -212,7 +212,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Site1.Master" />
+    <Content Include="StudentPages\Site1.Master" />
     <Content Include="Service References\ServiceReference1\country.wsdl" />
     <Content Include="Service References\ServiceReference2\uszip.wsdl" />
     <Content Include="Site2.Master" />
@@ -231,9 +231,7 @@
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
     <WCFMetadataStorage Include="Service References\ServiceReference2\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StudentPages\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
