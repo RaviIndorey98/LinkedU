@@ -46,7 +46,7 @@ namespace JMD
             {
                 Session["studUserId"] = username;
                 Session["studEmail"] = email;
-                Response.Redirect("createstudentprofile1.aspx");
+                Response.Redirect("~/StudentPages/createstudentprofile1.aspx");
             }
             else if (radiolist1.SelectedValue == "recruiter")
             {
@@ -54,6 +54,72 @@ namespace JMD
                 Session["recEmail"] = email;
                 Response.Redirect("Recruiter Profile.aspx");
             }
+ 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+            dbConnection.Open();
+            dbConnection.ChangeDatabase("amalviy_LinkedU");
+            string SQLString = "SELECT * FROM SignUp WHERE UserName=" + "'" + TextBox5.Text + "'" + "AND Password=" + "'" + TextBox6.Text + "'";
+            SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
+            SqlDataReader idRecords = checkIDTable.ExecuteReader();
+            if (idRecords.Read())
+            {
+                if (RadioButtonList1.SelectedValue == "recruiter")
+                {
+                    Session["recUserid"] = TextBox5.Text;
+                    Response.Redirect("Recruiterprofiledisp.aspx");
+                }
+                else if (RadioButtonList1.SelectedValue == "student")
+                {
+                    Session["studUserid"] = TextBox5.Text;
+                    Response.Redirect("StudentHomePage.aspx");
+                }
+                 
+
+            }
+            else
+            {
+                //  validateMessage.Text = "<p>**Invalid student details**</p>";
+                Label3.Text = "Invalid Username or Password";
+                idRecords.Close();
+
+            }
+        }
+
+<<<<<<< HEAD
+       
+=======
+        protected void processTextChanged(object sender, EventArgs e)
+        {
+            SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+                dbConnection.Open();
+                dbConnection.ChangeDatabase("amalviy_LinkedU");
+               string SQLString = "SELECT * FROM SignUp WHERE UserName=" + "'" + TextBox1.Text + "'";
+                SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
+                SqlDataReader idRecords = checkIDTable.ExecuteReader();
+                if (idRecords.Read())
+                {
+
+                    Button1.Enabled = false;
+                    Label5.Text = "User ID already exists!!!!!!!!!!!";
+                    Label5.ForeColor = System.Drawing.Color.Red;
+                    idRecords.Close();
+                }
+                else
+                {
+                    Button1.Enabled = true;
+                    Label5.Text = "User ID available ";
+                    idRecords.Close();
+                }
+            }
+        
+
+
+        }
+
+>>>>>>> origin/master
     }
-}
+

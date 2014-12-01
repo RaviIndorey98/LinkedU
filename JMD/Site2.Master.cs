@@ -14,9 +14,22 @@ namespace JMD
 
         }
 
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Recruiterpostingdisp.aspx");
+        }
         protected void LinkButton5_Click(object sender, EventArgs e)
         {
-            Response.Redirect("WebForm4.aspx");
+            Response.Redirect("Recruiterprofiledisp.aspx");
+        } 
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Session.Remove("recUserid");
+            Session.RemoveAll();
+            Response.Redirect("Home.aspx");
+
         }
+
+       
     }
 }

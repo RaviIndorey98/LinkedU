@@ -17,11 +17,16 @@ namespace JMD
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Response.Redirect("Home.aspx");
+=======
+            Response.Redirect("StudentHomePage.aspx");
+>>>>>>> origin/master
         }
 
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Response.Redirect("~/StudentPages/MyProfile.aspx");
         }
 
@@ -42,5 +47,20 @@ namespace JMD
             Response.Redirect("Home.aspx");
         }
 
+=======
+            Session.Remove("studUserid");
+            Session.RemoveAll();
+            Response.Redirect("Home.aspx");
+
+        }
+        
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Studentprofiledisp.aspx");
+        }
+
+        
+        
+>>>>>>> origin/master
     }
 }

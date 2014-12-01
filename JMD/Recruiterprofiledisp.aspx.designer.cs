@@ -10,7 +10,7 @@
 namespace JMD {
     
     
-    public partial class WebForm1 {
+    public partial class WebForm4 {
         
         /// <summary>
         /// FormView1 control.
@@ -29,17 +29,5 @@ namespace JMD {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new JMD.Site1 Master {
-            get {
-                return ((JMD.Site1)(base.Master));
-            }
-        }
     }
 }

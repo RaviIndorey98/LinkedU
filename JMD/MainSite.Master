@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainSite.master.cs" Inherits="JMD.MainSite" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href="NewStyleSheet.css" rel="stylesheet" />
+    <title> LinkedU</title>
+    
+    <style type="text/css">
+        .noscreen {
+            height: 0px;
+            width: 801px;
+        }
+    </style>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        &nbsp;<div class="header">
+				
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href =" #">Log In</a> . <a href =" #">Create New Account</a> . <a href =" #">Log Out</a>
+
+		</p>
+		</div>
+
+
+	<div class="subheader">
+				
+		<div class="title">
+			<h1><b>LinkedU</b></h1>
+            <h2>Student</h2>
+            <asp:ContentPlaceHolder ID="MenuPlaceHolder" runat="server">
+
+
+        
+            <div class="navigation">
+                <asp:LinkButton ID="LinkButton1" runat="server">Home</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" runat="server"> My Profile</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton4" runat="server">Academic Information</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton3" runat="server">Search</asp:LinkButton>
+                
+            </div>
+                <br/>
+                <hr class="noscreen" />
+
+
+
+
+        </asp:ContentPlaceHolder>
+           
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+            <div class="navigation">
+
+
+
+            
+
+
+
+            </div>
+       </asp:ContentPlaceHolder>
+		</div>
+
+
+	</div>
+
+    </form>
+</body>
+</html>

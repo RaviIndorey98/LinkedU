@@ -13,13 +13,13 @@ namespace JMD
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["recUserId"] != null)
+            if (Session["recUserid"] != null)
             {
                 //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
                 SessionParameter empid = new SessionParameter();
-                empid.Name = "recUserId";
+                empid.Name = "recUserid";
                 empid.Type = TypeCode.Int32;
-                empid.SessionField = "recUserId";
+                empid.SessionField = "recUserid";
             }
             else 
             {
@@ -64,7 +64,7 @@ namespace JMD
                 Label8.Text = "invalid Zip";
             }
 
-            string usern = Session["useridse"].ToString();
+            string usern = Session["recUserid"].ToString();
             Session["useridstate"] = DropDownList1.SelectedValue.ToString();
             Session["useriduniv"] = TextBox2.Text;
             Session["useridcity"] = TextBox17.Text;

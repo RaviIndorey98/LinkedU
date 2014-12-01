@@ -161,8 +161,8 @@ namespace JMD
             string city = Session["useridcity"].ToString();
             string zip = Session["useridzip"].ToString();
             string state = Session["useridstate"].ToString();
-          
-            string usern = Session["useridse"].ToString();
+
+            string usern = Session["recUserid"].ToString();
 
             string minact = minACT.Text;
             string minsat = minSAT.Text;
@@ -173,6 +173,7 @@ namespace JMD
             //string birthday = txtStartDate.Text;
             //Convert.ToDateTime(birthday);
             //string hisp = CheckBox1.Text.ToString();
+<<<<<<< HEAD
             string extrareq = extracurriculars.Checked ? "Yes" : "No";
             string sop = CheckBox3.Checked ? "Yes" : "No";
             string lor = TextBox1.Text;
@@ -181,16 +182,33 @@ namespace JMD
             string ses1 = CheckBox8.Checked ? "Yes" : "No";
             string ses2 = CheckBox9.Checked ? "Yes" : "No";
             string ses3 = CheckBox10.Checked ? "Yes" : "No";
+=======
+            string extrareq = "yes";
+            string sop = "yes";
+            string lor = TextBox1.Text;
+            string trans = "yes";
+            string resume = "yes";
+            string ses1 = "yes";
+            string ses2 = "yes";
+            string ses3 = "yes";
+>>>>>>> origin/master
             string ded1 = txtStartDate.Text;
             Convert.ToDateTime(ded1);
             string ded2 = txtStartDate.Text;
             Convert.ToDateTime(ded2);
             string ded3 = txtStartDate.Text;
             Convert.ToDateTime(ded3);
+<<<<<<< HEAD
             string momsus = CheckBox6.Checked ? "Yes" : "No";
             string momsuspr = CheckBox6.Checked ? DropDownList4.SelectedValue.ToString() : "No";
             string highsus = CheckBox7.Checked ? "Yes" : "No";
             string highsuspr = CheckBox7.Checked ? DropDownList5.SelectedValue.ToString() : "No";
+=======
+            string momsus = "yes";
+            string momsuspr = DropDownList4.Items.ToString();
+            string highsus = "yes";
+            string highsuspr = DropDownList5.Items.ToString();
+>>>>>>> origin/master
             string dpname1 = courseList.Items.ToString();
             string coname1 = course.Text;
             string dpname2 = DropDownList1.Items.ToString();
@@ -263,7 +281,7 @@ namespace JMD
             sqlCommand1.ExecuteNonQuery();
 
             dbConnection.Close();
-            Response.Redirect("Webform4.aspx");
+            Response.Redirect("Recruiterprofiledisp.aspx");
 
         }
 

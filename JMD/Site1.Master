@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
+<<<<<<< HEAD
     <title>ARaynorDesign Template</title>
     <meta name="description" content="free website template" />
     <meta name="keywords" content="enter your keywords here" />
@@ -12,6 +13,16 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/image_slide.js"></script>
+=======
+   <title>ARaynorDesign Template</title>
+  <meta name="description" content="free website template" />
+  <meta name="keywords" content="enter your keywords here" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <link rel="stylesheet" type="text/css" href="style1.css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/image_slide.js"></script>
+>>>>>>> origin/master
 </head>
 <body>
     <form id="form1" runat="server">
@@ -48,6 +59,7 @@
             </div>
             <!--close menubar-->
 
+<<<<<<< HEAD
             <div id="site_content">
 
                 <div id="content">
@@ -55,6 +67,25 @@
           <div class="content_item">
           </div>
       </div>
+=======
+	<div id="menubar">
+      <ul id="menu">
+          
+         <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Home</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">My Profile</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton3" runat="server">All Posting</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton4" runat="server">Search</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Logout</asp:LinkButton></li>
+        </ul>
+    </div><!--close menubar-->	
+    
+	<div id="site_content">		
+<div id="content">
+        <div class="content_item">
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                 
+            </asp:ContentPlaceHolder>
+>>>>>>> origin/master
             </div>
            </div> <!--close main-->
     </form>

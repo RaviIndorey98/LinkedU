@@ -16,14 +16,14 @@ namespace JMD
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["studUserId"] != null)
+            if (Session["studUserid"] != null)
             {
                 //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
                 SessionParameter empid = new SessionParameter();
                 empid.Name = "studUserId";
                 empid.Type = TypeCode.Int32;
-                empid.SessionField = "studUserId";
-                studUserIDLabel.Text = Session["studUserId"].ToString();
+                empid.SessionField = "studUserid";
+                studUserIDLabel.Text = Session["studUserid"].ToString();
                 studEmailLabel.Text = Session["studEmail"].ToString();
             }
             else
@@ -136,7 +136,7 @@ namespace JMD
             string ssn = TextBox5.Text;
             string birthday = txtStartDate.Text;
             Convert.ToDateTime(birthday);
-            string hisp = CheckBox1.Text.ToString();
+            string hisp = "yes";
             string race = RadioButtonList1.Text.ToString();
             string address1 = TextBox6.Text;
             string address2 = TextBox7.Text;
@@ -197,22 +197,11 @@ namespace JMD
                    + zip + "', '"
                    + fpcode + "', '"
                    + country + "')";
-
-
-
-
-                //string auInfo = " INSERT INTO StudentProfile VALUES('" + username + "')";
-
                 SqlCommand sqlCommand2 = new SqlCommand(studentInfo, dbConnection);
-                //SqlCommand sqlCommand2 = new SqlCommand(auInfo, dbConnection);
-                //sqlCommand.ExecuteNonQuery();
                 sqlCommand2.ExecuteNonQuery();
             }
-            //Label1.Text += "<p>Thanks " + first + "! Your new student ID is <strong>" + userid + "</strong>.</p>";
-            //Label1.Text += "<p><a href='ReturningStudent.aspx?" + studentID + "'>Register for Classes</a></p>";
             dbConnection.Close();
-
-            Response.Redirect("studacadinfo.aspx");
+            Response.Redirect("~/StudentPages/studacadinfo.aspx");
         }
     }
 }
