@@ -92,6 +92,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <Content Include="studacadinfo.aspx" />
+    <Content Include="StudentPages\Search.aspx" />
     <Content Include="style1.css" />
     <Content Include="style.css" />
     <Content Include="stylelog.css" />
@@ -175,6 +176,13 @@
     <Compile Include="StudentHomePage.aspx.designer.cs">
       <DependentUpon>StudentHomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StudentPages\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentPages\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -231,9 +239,7 @@
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
     <WCFMetadataStorage Include="Service References\ServiceReference2\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StudentPages\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

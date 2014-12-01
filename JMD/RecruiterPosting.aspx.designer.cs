@@ -319,13 +319,13 @@ namespace JMD {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// CheckBoxList1 control.
+        /// extracurriculars control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::System.Web.UI.WebControls.CheckBox extracurriculars;
         
         /// <summary>
         /// CheckBox3 control.

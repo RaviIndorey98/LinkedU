@@ -542,7 +542,7 @@ namespace JMD
             string interest2 = DropDownList6.SelectedValue;
             string interest3 = DropDownList7.SelectedValue;
             
-            string interest5 = DropDownList9.SelectedValue;
+            string interest4 = DropDownList9.SelectedValue;
 
             string preferredCities = TextBox16.Text;
 

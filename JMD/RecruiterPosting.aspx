@@ -305,10 +305,8 @@
            
             &nbsp;&nbsp;&nbsp;
            
-            <asp:Label ID="Label5" runat="server" Text="Student Should have extracurricular"></asp:Label>&nbsp;&nbsp;<asp:CheckBoxList ID="CheckBoxList1" runat="server" Height="44px" Width="110px">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
-            </asp:CheckBoxList>
+            <asp:Label ID="Label5" runat="server" Text="Student Should have extracurricular"></asp:Label>&nbsp;&nbsp;
+            <asp:CheckBox ID="extracurriculars" runat="server" Text="Yes" />
             <br />
 
             <asp:CheckBox ID="CheckBox3" runat="server" />

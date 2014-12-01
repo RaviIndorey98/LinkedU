@@ -1,92 +1,62 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="JMD.Site1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-   <title>ARaynorDesign Template</title>
-  <meta name="description" content="free website template" />
-  <meta name="keywords" content="enter your keywords here" />
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=9" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/image_slide.js"></script>
+    <title>ARaynorDesign Template</title>
+    <meta name="description" content="free website template" />
+    <meta name="keywords" content="enter your keywords here" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/image_slide.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="main">
-    <div id="header">
-	  <div id="banner">
-	    <div id="welcome">
-	      <h1>LinkedU</h1>
-	    </div><!--close welcome-->
-	    <div id="welcome_slogan">
-	      <h1>Student</h1>
-	    </div><!--close welcome_slogan-->
-	  </div><!--close banner-->
-    </div><!--close header-->
-
-	<div id="menubar">
-      <ul id="menu">
-          
-         <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Home</asp:LinkButton></li>
-          <li><asp:LinkButton ID="LinkButton2" runat="server">My Profile</asp:LinkButton></li>
-          <li><asp:LinkButton ID="LinkButton3" runat="server">All Posting</asp:LinkButton></li>
-          <li><asp:LinkButton ID="LinkButton4" runat="server">Search</asp:LinkButton></li>
-          <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Logout</asp:LinkButton></li>
-        </ul>
-    </div><!--close menubar-->	
-    
-	<div id="site_content">		
-
-	 <%-- <div class="sidebar_container">       
-		<div class="sidebar">
-          <div class="sidebar_item">
-            <h2>New Website</h2>
-            <p>Welcome to our new website. Please have a look around, any feedback is much appreciated.</p>
-          </div><!--close sidebar_item--> 
-        </div><!--close sidebar-->     		
-		<div class="sidebar">
-          <div class="sidebar_item">
-           <h2>Latest Update</h2>
-            <h3>March 2013</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
-		  </div><!--close sidebar_item--> 
-        </div><!--close sidebar-->
-		<div class="sidebar">
-          <div class="sidebar_item">
-            <h3>February 2013</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
-		 </div><!--close sidebar_item--> 
-        </div><!--close sidebar-->  
-		<div class="sidebar">
-          <div class="sidebar_item">
-            <h3>January 2013</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus tempor enim.</p>         
-		  </div><!--close sidebar_item--> 
-        </div><!--close sidebar-->  		
-        <div class="sidebar">
-          <div class="sidebar_item">
-            <h2>Contact</h2>
-            <p>Phone: +44 (0)1234 567891</p>
-            <p>Email: <a href="mailto:info@youremail.co.uk">info@youremail.co.uk</a></p>
-          </div><!--close sidebar_item--> 
-        </div><!--close sidebar-->
-       </div><!--close sidebar_container--%>&nbsp;<%--<div class="slideshow">
-	    <ul class="slideshow">
-          <li class="show"><img width="680" height="250" src="images/home_1.jpg" alt="&quot;Enter your caption here&quot;" /></li>
-          <li><img width="680" height="250" src="images/home_2.jpg" alt="&quot;Enter your caption here&quot;" /></li>
-        </ul>
-      </div>--%><div id="content">
-        <div class="content_item">
-             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                 
-            </asp:ContentPlaceHolder>
+        <div id="main">
+            <div id="header">
+                <div id="banner">
+                    <div id="welcome">
+                        <h1>LinkedU</h1>
+                    </div>
+                    <!--close welcome-->
+                    <div id="welcome_slogan">
+                        <h1>Student</h1>
+                    </div>
+                    <!--close welcome_slogan-->
+                </div>
+                <!--close banner-->
             </div>
-	 </div>
-  </div><!--close main-->
-  
-  
+            <!--close header-->
+
+            <div id="menubar">
+                <ul id="menu">
+
+                    <li>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Home</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">My Profile</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">All Posting</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">Search</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Logout</asp:LinkButton></li>
+                </ul>
+            </div>
+            <!--close menubar-->
+
+            <div id="site_content">
+
+                <div id="content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+          <div class="content_item">
+          </div>
+      </div>
+            </div>
+           </div> <!--close main-->
     </form>
 </body>
 </html>
