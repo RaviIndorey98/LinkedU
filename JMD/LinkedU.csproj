@@ -91,13 +91,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-<<<<<<< HEAD
-    <Content Include="studacadinfo.aspx" />
     <Content Include="StudentPages\Search.aspx" />
-=======
     <Content Include="StudentPages\studacadinfo.aspx" />
     <Content Include="StudentPages\style1.css" />
->>>>>>> origin/master
     <Content Include="style1.css" />
     <Content Include="style.css" />
     <Content Include="stylelog.css" />
@@ -168,6 +164,13 @@
     <Compile Include="Site2.Master.designer.cs">
       <DependentUpon>Site2.Master</DependentUpon>
     </Compile>
+    <Compile Include="StudentPages\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentPages\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StudentPages\studacadinfo.aspx.cs">
       <DependentUpon>studacadinfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -182,20 +185,8 @@
     <Compile Include="StudentHomePage.aspx.designer.cs">
       <DependentUpon>StudentHomePage.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="StudentPages\Search.aspx.cs">
-      <DependentUpon>Search.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="StudentPages\Search.aspx.designer.cs">
-      <DependentUpon>Search.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-=======
     <Compile Include="Studentprofiledisp.aspx.cs">
       <DependentUpon>Studentprofiledisp.aspx</DependentUpon>
->>>>>>> origin/master
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Studentprofiledisp.aspx.designer.cs">

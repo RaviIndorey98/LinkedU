@@ -57,7 +57,8 @@ namespace JMD
  
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+
+        protected void Button1_Click1(object sender, EventArgs e)
         {
             SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
             dbConnection.Open();
@@ -75,9 +76,9 @@ namespace JMD
                 else if (RadioButtonList1.SelectedValue == "student")
                 {
                     Session["studUserid"] = TextBox5.Text;
-                    Response.Redirect("StudentHomePage.aspx");
+                    Response.Redirect("~/StudentHomePage.aspx");
                 }
-                 
+
 
             }
             else
@@ -87,39 +88,32 @@ namespace JMD
                 idRecords.Close();
 
             }
-        }
-
-<<<<<<< HEAD
-       
-=======
-        protected void processTextChanged(object sender, EventArgs e)
-        {
-            SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
-                dbConnection.Open();
-                dbConnection.ChangeDatabase("amalviy_LinkedU");
-               string SQLString = "SELECT * FROM SignUp WHERE UserName=" + "'" + TextBox1.Text + "'";
-                SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
-                SqlDataReader idRecords = checkIDTable.ExecuteReader();
-                if (idRecords.Read())
-                {
-
-                    Button1.Enabled = false;
-                    Label5.Text = "User ID already exists!!!!!!!!!!!";
-                    Label5.ForeColor = System.Drawing.Color.Red;
-                    idRecords.Close();
-                }
-                else
-                {
-                    Button1.Enabled = true;
-                    Label5.Text = "User ID available ";
-                    idRecords.Close();
-                }
-            }
-        
-
 
         }
-
->>>>>>> origin/master
     }
+}
 
+        //protected void processTextChanged(object sender, EventArgs e)
+        //{
+        //    SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
+        //        dbConnection.Open();
+        //        dbConnection.ChangeDatabase("amalviy_LinkedU");
+        //       string SQLString = "SELECT * FROM SignUp WHERE UserName=" + "'" + TextBox1.Text + "'";
+        //        SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
+        //        SqlDataReader idRecords = checkIDTable.ExecuteReader();
+        //        if (idRecords.Read())
+        //        {
+
+        //            Button1.Enabled = false;
+        //            Label5.Text = "User ID already exists!!!!!!!!!!!";
+        //            Label5.ForeColor = System.Drawing.Color.Red;
+        //            idRecords.Close();
+        //        }
+        //        else
+        //        {
+        //            Button1.Enabled = true;
+        //            Label5.Text = "User ID available ";
+        //            idRecords.Close();
+        //        }
+        //}
+        

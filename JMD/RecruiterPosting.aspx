@@ -303,10 +303,8 @@
                         <br />
             
            
-            &nbsp;&nbsp;&nbsp;
-           
-            <asp:Label ID="Label5" runat="server" Text="Student Should have extracurricular"></asp:Label>&nbsp;&nbsp;
-            <asp:CheckBox ID="extracurriculars" runat="server" Text="Yes" />
+            <asp:CheckBox ID="CheckBox11" runat="server" Text="Student Should have extracurricular" />
+            <br />
             <br />
 
             <asp:CheckBox ID="CheckBox3" runat="server" Text="SOP" />
@@ -317,11 +315,9 @@
             <asp:TextBox ID="TextBox1" runat="server" Width="35px"></asp:TextBox>
             <br />
             <br />
-            <br />
 
             <asp:CheckBox ID="CheckBox4" runat="server" Text="Transcripts" />
             &nbsp;<br />
-            <br />
 
             <br />
             <asp:CheckBox ID="CheckBox5" runat="server" Text="Resume" />
