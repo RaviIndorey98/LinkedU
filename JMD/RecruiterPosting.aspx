@@ -311,9 +311,8 @@
             </asp:CheckBoxList>
             <br />
 
-            <asp:CheckBox ID="CheckBox3" runat="server" />
-            &nbsp;<asp:Label ID="Label6" runat="server" Text="SOP"></asp:Label>
-            <br />
+            <asp:CheckBox ID="CheckBox3" runat="server" Text="SOP" />
+            &nbsp;<br />
             <br />
             <asp:Label ID="Label7" runat="server" Text="Number of LORs Required"></asp:Label>
             &nbsp;&nbsp;&nbsp;
@@ -322,15 +321,13 @@
             <br />
             <br />
 
-            <asp:CheckBox ID="CheckBox4" runat="server" />
-            &nbsp;<asp:Label ID="Label8" runat="server" Text="Transcripts"></asp:Label>
-            <br />
+            <asp:CheckBox ID="CheckBox4" runat="server" Text="Transcripts" />
+            &nbsp;<br />
             <br />
 
             <br />
-            <asp:CheckBox ID="CheckBox5" runat="server" />
-            &nbsp;<asp:Label ID="Label9" runat="server" Text="Resume"></asp:Label>
-            <br />
+            <asp:CheckBox ID="CheckBox5" runat="server" Text="Resume" />
+            &nbsp;<br />
             <br />
             <br />
             <asp:Label ID="Label10" runat="server" Text="Session"></asp:Label>

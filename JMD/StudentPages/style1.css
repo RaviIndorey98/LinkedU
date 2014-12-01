@@ -2,7 +2,7 @@ html
 { height: 100%;}
 
 *
-{ margin: 1px 0 0 0;
+{ margin: 0 0 0 0px;
   padding: 0;
 }
 
@@ -14,7 +14,7 @@ body
 
 p
 { padding: 0 0 10px 0;
-  color: #FFFFFF;
+  color: #FFF;
   line-height: 1.7em;
   font-size: 100% }
 
@@ -23,13 +23,10 @@ img
 
 h1, h2, h3, h4, h5, h6 
 { font: normal 175% Arial, Helvetica, sans-serif;
-  color: #FFFFFF;
+  color: #FFF;
   text-shadow: 1px 1px #1D1D1D;
   letter-spacing: -1px;
-  margin: 0 0 10px 0;
-    height: 60px;
-    width: 855px;
-}
+  margin: 0 0 10px 0;}
 
 h2
 { font: normal 165% Arial, Helvetica, sans-serif;}
@@ -172,7 +169,7 @@ ul#menu li:hover a
   padding-left: 20px;
   overflow: hidden;
   margin: 0 auto;
-  background: #323232;
+  background: #D0D0D0;
   border-radius: 0px 0px 15px 15px;
   -moz-border-radius: 0px 0px 15px 15px;
   -webkit-border: 0px 0px 15px 15px;} 
@@ -185,11 +182,10 @@ ul#menu li:hover a
 
 .sidebar
 { float: left;
-  width: 231px;
+  width: 250px;
   padding: 0;
   margin-top: 10px;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px;}
 
 .sidebar_item
 { font: normal 100% Arial, Helvetica, sans-serif;
@@ -213,18 +209,14 @@ ul#menu li:hover a
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;}  
 
 #content
-{ width: 943px;
+{ width: 680px;
   margin-bottom: 20px;
-  float: left;
-    height: 715px;
-}
+  float: left;}
 
 .content_item
-{ width: 941px;
+{ width: 680px;
   margin-top: 20px;
-  margin-bottom: 20px;
-    height: 697px;
-}
+  margin-bottom: 20px;}
   
 .content_image
 { float: left; 
@@ -333,16 +325,16 @@ ul#menu li:hover a
 
 .form_settings span
 { float: left; 
-  width: 280px; 
-  text-align: left;}
+  text-align: left;
+}
   
 .form_settings input, .form_settings textarea
 { padding: 2px; 
-  width: 299px; 
   font: 100% arial; 
   border: 1px solid #E5E5DB; 
   background: #FFF; 
-  color: #47433F;}
+  color: #47433F;
+}
   
 .form_settings input[type="checkbox"]
 { padding: 2px 0; 

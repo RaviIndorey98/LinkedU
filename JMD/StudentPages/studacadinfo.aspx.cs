@@ -19,20 +19,20 @@ namespace JMD
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["studUserId"] != null)
+            if (Session["studUserid"] != null)
             {
                 //Label1.Text = Session["useridsess"].ToString() + "welcome to mayank holidays";
                 SessionParameter stud = new SessionParameter();
-                stud.Name = "studUserId";
+                stud.Name = "studUserid";
                 stud.Type = TypeCode.Int32;
-                stud.SessionField = "studUserId";
+                stud.SessionField = "studUserid";
             }
             else
             {
                 Response.Redirect("Home.aspx");
             }
 
-            userIdLabel.Text = Session["studUserId"].ToString();
+            userIdLabel.Text = Session["studUserid"].ToString();
             emailLabel.Text = Session["studEmail"].ToString();
             if (IsPostBack == false)
             {
@@ -603,7 +603,7 @@ namespace JMD
             SqlCommand sqlCommand1 = new SqlCommand(studentInfo, dbConnection);
             sqlCommand1.ExecuteNonQuery();
 
-            Response.Redirect("WebForm1.aspx");
+            Response.Redirect("StudentHomePage.aspx");
 
 
         }

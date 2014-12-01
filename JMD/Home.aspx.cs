@@ -46,7 +46,7 @@ namespace JMD
             {
                 Session["studUserId"] = username;
                 Session["studEmail"] = email;
-                Response.Redirect("createstudentprofile1.aspx");
+                Response.Redirect("~/StudentPages/createstudentprofile1.aspx");
             }
             else if (radiolist1.SelectedValue == "recruiter")
             {
@@ -62,34 +62,33 @@ namespace JMD
             SqlConnection dbConnection = new SqlConnection("Data Source=itksqlexp8;Integrated Security=true");
             dbConnection.Open();
             dbConnection.ChangeDatabase("amalviy_LinkedU");
-            string SQLString = "SELECT * FROM login WHERE userid=" + "'" + TextBox1.Text + "'" + "AND password=" + "'" + TextBox2.Text + "'";
+            string SQLString = "SELECT * FROM SignUp WHERE UserName=" + "'" + TextBox5.Text + "'" + "AND Password=" + "'" + TextBox6.Text + "'";
             SqlCommand checkIDTable = new SqlCommand(SQLString, dbConnection);
             SqlDataReader idRecords = checkIDTable.ExecuteReader();
             if (idRecords.Read())
             {
-                //Session["useridsess"] = TextBox1.Text;
-                //Response.Redirect("WebForm2.aspx?usid=" + TextBox1.Text);
-                //idRecords.Close();
-                if (RadioButtonList1.SelectedValue == "student")
+                if (RadioButtonList1.SelectedValue == "recruiter")
                 {
-                    Session["studUserId"] = TextBox5.Text;
-                    Response.Redirect("createstudentprofile1.aspx");
+                    Session["recUserid"] = TextBox5.Text;
+                    Response.Redirect("Recruiterprofiledisp.aspx");
                 }
-                else if (RadioButtonList1.SelectedValue == "recruiter")
+                else if (RadioButtonList1.SelectedValue == "student")
                 {
-                    Session["recUserId"] = TextBox5.Text;
-                    Response.Redirect("Recruiter Profile.aspx");
+                    Session["studUserid"] = TextBox5.Text;
+                    Response.Redirect("StudentHomePage.aspx");
                 }
+                 
 
             }
             else
             {
                 //  validateMessage.Text = "<p>**Invalid student details**</p>";
-                Label4.Text = "Invalid Username or Password";
+                Label3.Text = "Invalid Username or Password";
                 idRecords.Close();
 
             }
         }
 
+       
     }
 }

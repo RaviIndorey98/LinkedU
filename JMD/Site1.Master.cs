@@ -17,31 +17,23 @@ namespace JMD
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("WebForm2.aspx");
+            Response.Redirect("StudentHomePage.aspx");
         }
 
         protected void LinkButton5_Click(object sender, EventArgs e)
         {
-            Response.Redirect("WebForm1.aspx");
-        }
-
-        protected void LogOut_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Home.aspx");
-        }
-
-        protected void LinkButton6_Click(object sender, EventArgs e)
-        {
-            Session.Remove("useridsess");
+            Session.Remove("studUserid");
             Session.RemoveAll();
             Response.Redirect("Home.aspx");
-        }
 
+        }
+        
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("WebForm2.aspx");
+            Response.Redirect("Studentprofiledisp.aspx");
         }
 
+        
         
     }
 }

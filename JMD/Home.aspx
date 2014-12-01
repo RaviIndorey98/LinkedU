@@ -61,8 +61,8 @@
 
                 <li>
                     <asp:RadioButtonList ID="RadioButtonList1" runat="server" Height="16px" Width="241px">
-                        <asp:ListItem>Student</asp:ListItem>
-                        <asp:ListItem>Recruiter</asp:ListItem>
+                        <asp:ListItem Value="student">Student</asp:ListItem>
+                        <asp:ListItem Value="recruiter">Recruiter</asp:ListItem>
                     </asp:RadioButtonList>
 
                 </li>

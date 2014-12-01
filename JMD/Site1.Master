@@ -1,5 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="JMD.Site2" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="JMD.Site1" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,29 +18,26 @@
     <div id="header">
 	  <div id="banner">
 	    <div id="welcome">
-	      <h1>Blue Skies</h1>
+	      <h1>LinkedU</h1>
 	    </div><!--close welcome-->
 	    <div id="welcome_slogan">
-	      <h1>Your Company Slogan Here</h1>
+	      <h1>Student</h1>
 	    </div><!--close welcome_slogan-->
 	  </div><!--close banner-->
     </div><!--close header-->
 
 	<div id="menubar">
       <ul id="menu">
-        
-         <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Home</asp:LinkButton></li>
-          <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Profile</asp:LinkButton></li>
           
-          <li><asp:LinkButton ID="LinkButton3" runat="server">Posting</asp:LinkButton></li>
-          <li><asp:LinkButton ID="LinkButton4" runat="server">Browser</asp:LinkButton></li>
-      <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Logout</asp:LinkButton></li>  
-      </ul>
+         <li><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Home</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">My Profile</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton3" runat="server">All Posting</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton4" runat="server">Search</asp:LinkButton></li>
+          <li><asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Logout</asp:LinkButton></li>
+        </ul>
     </div><!--close menubar-->	
     
 	<div id="site_content">		
-         
-	<div id="Div1">		
 <div id="content">
         <div class="content_item">
              <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

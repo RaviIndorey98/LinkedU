@@ -92,15 +92,17 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <Content Include="StudentPages\studacadinfo.aspx" />
+    <Content Include="StudentPages\style1.css" />
     <Content Include="style1.css" />
     <Content Include="style.css" />
     <Content Include="stylelog.css" />
     <Content Include="Web.config" />
     <Content Include="StudentHomePage.aspx" />
-    <Content Include="WebForm2.aspx" />
+    <Content Include="Studentprofiledisp.aspx" />
     <Content Include="WebForm3.aspx" />
-    <Content Include="WebForm4.aspx" />
+    <Content Include="Recruiterprofiledisp.aspx" />
     <Content Include="Home_Master.aspx" />
+    <Content Include="Recruiterpostingdisp.aspx" />
     <Content Include="WebForm8.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -147,11 +149,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="StudentPages\Site1.Master.cs">
+    <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="StudentPages\Site1.Master.designer.cs">
+    <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
     <Compile Include="Site2.Master.cs">
@@ -175,12 +177,12 @@
     <Compile Include="StudentHomePage.aspx.designer.cs">
       <DependentUpon>StudentHomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Studentprofiledisp.aspx.cs">
+      <DependentUpon>Studentprofiledisp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
+    <Compile Include="Studentprofiledisp.aspx.designer.cs">
+      <DependentUpon>Studentprofiledisp.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm3.aspx.cs">
       <DependentUpon>WebForm3.aspx</DependentUpon>
@@ -189,12 +191,12 @@
     <Compile Include="WebForm3.aspx.designer.cs">
       <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm4.aspx.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="Recruiterprofiledisp.aspx.cs">
+      <DependentUpon>Recruiterprofiledisp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm4.aspx.designer.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="Recruiterprofiledisp.aspx.designer.cs">
+      <DependentUpon>Recruiterprofiledisp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home_Master.aspx.cs">
       <DependentUpon>Home_Master.aspx</DependentUpon>
@@ -202,6 +204,13 @@
     </Compile>
     <Compile Include="Home_Master.aspx.designer.cs">
       <DependentUpon>Home_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recruiterpostingdisp.aspx.cs">
+      <DependentUpon>Recruiterpostingdisp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recruiterpostingdisp.aspx.designer.cs">
+      <DependentUpon>Recruiterpostingdisp.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm8.aspx.cs">
       <DependentUpon>WebForm8.aspx</DependentUpon>
@@ -212,7 +221,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StudentPages\Site1.Master" />
+    <Content Include="Site1.Master" />
     <Content Include="Service References\ServiceReference1\country.wsdl" />
     <Content Include="Service References\ServiceReference2\uszip.wsdl" />
     <Content Include="Site2.Master" />
