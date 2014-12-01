@@ -22,3 +22,9 @@ D:\Users\amalviy\Documents\GitHub\LinkedU\JMD\bin\AjaxMin.dll
 D:\Users\amalviy\Documents\GitHub\LinkedU\JMD\obj\Debug\LinkedU.csprojResolveAssemblyReference.cache
 D:\Users\amalviy\Documents\GitHub\LinkedU\JMD\obj\Debug\JMD.dll
 D:\Users\amalviy\Documents\GitHub\LinkedU\JMD\obj\Debug\JMD.pdb
+H:\IT485\LinkedU\LinkedU\JMD\bin\JMD.dll
+H:\IT485\LinkedU\LinkedU\JMD\bin\JMD.pdb
+H:\IT485\LinkedU\LinkedU\JMD\bin\AjaxMin.dll
+H:\IT485\LinkedU\LinkedU\JMD\obj\Debug\LinkedU.csprojResolveAssemblyReference.cache
+H:\IT485\LinkedU\LinkedU\JMD\obj\Debug\JMD.dll
+H:\IT485\LinkedU\LinkedU\JMD\obj\Debug\JMD.pdb

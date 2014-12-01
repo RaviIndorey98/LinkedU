@@ -23,9 +23,11 @@ namespace JMD.StudentPages
 
             int act_min, toefl_min, act_max, toefl_max, sat_min, sat_max;
             double ielts_min, ielts_max, gpa_min, gpa_max;
+
             string fallCheckBox = "No";
             string springCheckBox = "No";
             string summerCheckBox = "No";
+            string courses = TextBox11.Text.Length > 0 ? TextBox11.Text.ToString() : "";
 
             if(Fall.Checked==true)
             {
@@ -35,7 +37,7 @@ namespace JMD.StudentPages
             {
                 springCheckBox = "Yes";
             }
-            if (Fall.Checked == true)
+            if (Summer.Checked == true)
             {
                 summerCheckBox = "Yes";
             }
@@ -48,13 +50,13 @@ namespace JMD.StudentPages
             {
                 act_min = Convert.ToInt32(TextBox1.Text.ToString());
             }
-            if (TextBox2.Text.ToString() == "" || Convert.ToInt32(TextBox2.Text) >= 36)
+            if (TextBox2.Text.ToString() == "" || Convert.ToInt32(TextBox2.Text.ToString()) >= 36)
             {
                 act_max = 36;
             }
             else
             {
-                act_max = Convert.ToInt32(TextBox3.Text);
+                act_max = Convert.ToInt32(TextBox2.Text);
             }
             ///////////////////
             if (TextBox3.Text.ToString() == "")
@@ -128,14 +130,14 @@ namespace JMD.StudentPages
 
 
 
-            string university = "";
+            string department = "";
             if (DropDownList1.SelectedIndex == 0)
             {
-                university = "";
+                department = "";
             }
             else
             {
-                university = DropDownList1.SelectedValue;
+                department = DropDownList1.SelectedValue;
             }
 
             /////////////////Open////////////////////
@@ -187,9 +189,15 @@ namespace JMD.StudentPages
             //    }
             //}
 
-            string query = "Select PUniversityName from RecruiterPosting  ";
+            string query = "Select * from RecruiterPosting  ";
 
-            query += "Where MinAct BETWEEN " + act_min + " AND " + act_max + " OR MinSAT BETWEEN " + sat_min + " AND " + sat_max + " OR MinTOEFL BETWEEN " + toefl_min + " AND " + toefl_max + " OR MinIELTS BETWEEN " + ielts_min + " AND " + ielts_max + " OR MinCGPA BETWEEN " + gpa_min + " AND " + gpa_max + " OR Fall '%" + fallCheckBox + "%' OR Spring '%" + springCheckBox + "%' OR Summer '%" + summerCheckBox;
+            query += "Where (MinAct BETWEEN " + act_min + " AND " + act_max + ") OR (MinSAT BETWEEN " + sat_min + " AND " + sat_max + ") OR (MinTOEFL BETWEEN " + toefl_min + " AND " + toefl_max + ") OR (MinIELTS BETWEEN " + ielts_min + " AND " + ielts_max + ") OR (MinCGPA BETWEEN " + gpa_min + " AND " + gpa_max
+            + ") OR ( Fall LIKE '%" + fallCheckBox + "%') OR (Spring LIKE '%" + springCheckBox + "%') OR (Summer LIKE '%" + summerCheckBox
+                + "%') OR (Dpname1 LIKE '%" + department + "%') OR (Dpname2 LIKE '%" + department + "%') OR (Dpname3 LIKE '%" + department + "%') OR (Dpname4 LIKE '%" + department
+                + "%') OR (Dpcourse1 LIKE '%" + courses + "%') OR (Dpcourse2 LIKE '%" + courses + "%') OR (Dpcourse3 LIKE '%" + courses + "%') OR (Dpcourse4 LIKE '%" + courses + "%')";
+            //string name = "Srishti";
+            //query += "Where Dpcourse4 LIKE '%" + name + "%'";
+
             ////////////////////DataAdapter/////////////////////////
             SqlDataAdapter ada = new SqlDataAdapter(query, leConnection);
 

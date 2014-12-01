@@ -108,21 +108,27 @@
                 
             </tr>
             <tr>
+                <td class="auto-style2">Course</td>
+                <td class="auto-style3" colspan="2">
+                    <asp:TextBox ID="TextBox11" runat="server" Width="148px"></asp:TextBox>
+                </td>
+                
+            </tr>
+            <tr>
                 <td class="auto-style2">Session</td>
-                <td class="auto-style4">
+                <td class="auto-style4" colspan="2">
                     <asp:CheckBox ID="Fall" runat="server" Text="Fall" />
                     <asp:CheckBox ID="Spring" runat="server" Text="Spring" />
                     <asp:CheckBox ID="Summer" runat="server" Text="Summer" />
                 </td>
-                <td>
-                    &nbsp;</td>
+                
             </tr>
             <tr>
                 <td class="auto-style2">
+                    &nbsp;</td>
+                <td class="auto-style4">
                     <asp:Button ID="Button1" runat="server" Text="Search" Width="61px" OnClick="Button1_Click"/>
                 </td>
-                <td class="auto-style4">
-                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
